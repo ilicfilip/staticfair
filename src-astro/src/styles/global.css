@@ -90,6 +90,36 @@
   outline-color: #fff;
 }
 
+/* ── Embed Responsive ────────────────────────────────── */
+
+.embed-responsive {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-block: 1.5rem;
+}
+
+.embed-responsive iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ── Video Responsive ────────────────────────────────── */
+
+.video-responsive {
+  width: 100%;
+  margin-block: 1.5rem;
+}
+
+.video-responsive video {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
 /* ── Reduced Motion ──────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {

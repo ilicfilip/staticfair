@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About FAIR — Federated and Independent Repositories"
+  description="Learn about the FAIR Package Manager, a Linux Foundation project building an open ecosystem of federated, independent package repositories."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">About FAIR</h1>
+
+        <p>The FAIR Package Manager is a <a href="https://www.linuxfoundation.org/" rel="noopener noreferrer" target="_blank">Linux Foundation<span class="sr-only"> (opens in new tab)</span></a> project dedicated to improving the stability, resilience, and openness of content management systems, officially known as FAIR Package Manager a Series of LF Projects, LLC.</p>
+
+        <p>Its flagship initiative is an open-source system for publishing, discovering, and installing software packages such as plugins, themes, and other extensions. Instead of relying on a single central directory, FAIR enables a federated network of independent repositories. This approach increases reliability, encourages innovation, and gives users and developers more choice in how and where they access software.</p>
+
+        <h2>What you can do with FAIR</h2>
+
+        <ul>
+          <li><strong>For site owners and end-users:</strong> Install and update extensions from multiple trusted sources without depending on one provider.</li>
+          <li><strong>For developers:</strong> Publish your work in a decentralized network and retain control over your distribution.</li>
+          <li><strong>For communities and organizations:</strong> Host your own repository to serve your members, customers, or niche audiences.</li>
+        </ul>
+
+        <h2>How we work</h2>
+
+        <p>FAIR is developed in the open by a global community of contributors, supported by the Linux Foundation's neutral governance. The Technical Steering Committee leads the technical direction, while anyone can get involved. Contributions range from writing code and testing, to documentation, translations, and community engagement.</p>
+
+        <h2>Get involved</h2>
+
+        <p>Whether you want to use FAIR, build with FAIR, or help guide its future, your participation is welcome! Explore our <a href="https://github.com/fairpm" rel="noopener noreferrer" target="_blank">GitHub repositories<span class="sr-only"> (opens in new tab)</span></a>, review the <a href="https://github.com/fairpm/fair-protocol" rel="noopener noreferrer" target="_blank">technical specifications<span class="sr-only"> (opens in new tab)</span></a>, or <a href="https://chat.fair.pm" rel="noopener noreferrer" target="_blank">join our community discussions<span class="sr-only"> (opens in new tab)</span></a> to see what's next.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(ul) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  .prose :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+</style>

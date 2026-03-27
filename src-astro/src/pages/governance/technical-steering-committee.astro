@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Technical Steering Committee — FAIR"
+  description="The TSC guides the FAIR Package Manager's development, oversees contributions, and ensures the project benefits the community."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">Technical Steering Committee</h1>
+
+        <p>The Technical Steering Committee is the group that looks after the day-to-day direction of the FAIR Package Manager. Its role is to guide the project's development, keep things running smoothly, and make sure contributions of all kinds come together in a way that benefits the community.</p>
+
+        <p>Because this is a technical project, every contribution is considered technical — even if it's not code. Writing documentation, testing, improving accessibility, and other types of contributions are just as important as coding. The TSC helps make sure all of this work is valued and supported.</p>
+
+        <p>The TSC is guided by three co-chairs and a group of organizers, with <a href="https://github.com/fairpm/tsc/blob/main/working-groups/README.md" rel="noopener noreferrer" target="_blank">Working Groups<span class="sr-only"> (opens in new tab)</span></a> that bring people together around specific areas of focus.</p>
+
+        <p><a href="https://github.com/fairpm/tsc/blob/main/organizers.md" rel="noopener noreferrer" target="_blank">Meet the current co-chairs and organizers<span class="sr-only"> (opens in new tab)</span></a>.</p>
+
+        <p>We welcome new contributors! See <a href="/get-involved/">ways to get involved</a> and check out our <a href="/get-involved/fair-working-groups/">active Working Groups</a>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+</style>

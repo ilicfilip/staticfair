@@ -1,1 +1,8 @@
-export default new Map();
+
+import __ASTRO_IMAGE_IMPORT_FOcvB from "../../assets/images/blog/avatar-settings.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdiscover-trust-install-fair-1-0-is-here.md";
+import __ASTRO_IMAGE_IMPORT_2VwQv from "../../assets/images/blog/combined-package-list-gu.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdiscover-trust-install-fair-1-0-is-here.md";
+import __ASTRO_IMAGE_IMPORT_2vOrzo from "../../assets/images/blog/dashboard-planet.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdiscover-trust-install-fair-1-0-is-here.md";
+import __ASTRO_IMAGE_IMPORT_59LE6 from "../../assets/images/blog/planet-zoomed.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdiscover-trust-install-fair-1-0-is-here.md";
+import __ASTRO_IMAGE_IMPORT_SDNHp from "../../assets/images/blog/plugin-details-install.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdiscover-trust-install-fair-1-0-is-here.md";
+export default new Map([["../../assets/images/blog/avatar-settings.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdiscover-trust-install-fair-1-0-is-here.md", __ASTRO_IMAGE_IMPORT_FOcvB], ["../../assets/images/blog/combined-package-list-gu.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdiscover-trust-install-fair-1-0-is-here.md", __ASTRO_IMAGE_IMPORT_2VwQv], ["../../assets/images/blog/dashboard-planet.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdiscover-trust-install-fair-1-0-is-here.md", __ASTRO_IMAGE_IMPORT_2vOrzo], ["../../assets/images/blog/planet-zoomed.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdiscover-trust-install-fair-1-0-is-here.md", __ASTRO_IMAGE_IMPORT_59LE6], ["../../assets/images/blog/plugin-details-install.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdiscover-trust-install-fair-1-0-is-here.md", __ASTRO_IMAGE_IMPORT_SDNHp]]);
+		

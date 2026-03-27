@@ -1,0 +1,220 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="FAIR: rethinking how WordPress software is distributed"
+  description="FAIR — Federated and Independent Repositories — is rethinking the WordPress distribution model with a decentralized, verifiable, and community-governed alternative."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">FAIR: rethinking how WordPress software is distributed</h1>
+
+        <p>For twenty years, WordPress.org has powered the majority of plugin and theme distribution for millions of sites. It has been central to how developers reach users and how users keep their sites secure and up to date. Over time, this centralization has created structural risks for the entire ecosystem.</p>
+
+        <p>FAIR — <strong>Federated and Independent Repositories</strong> — is rethinking the distribution model. It provides a decentralized, verifiable, and community-governed alternative that improves security, privacy, and resilience while maintaining the ease of use people expect.</p>
+
+        <aside class="bg-light-gray p-6 rounded my-6">
+          <h3>Aside: what "federated" means</h3>
+
+          <p>A federated system is one made up of many independent parts that can talk to each other. Each repository or service runs on its own infrastructure but follows shared standards so they can connect and exchange information.</p>
+
+          <p class="mb-0">Think of it like email: Gmail, Outlook, and Fastmail are separate providers, but you can send and receive messages between them because they all use the same protocol. FAIR works the same way for plugin and theme distribution: instead of one central server, it's a network of connected repositories that stay compatible while remaining independently operated.</p>
+        </aside>
+
+        <h2 id="problems">The problems we're addressing</h2>
+
+        <p>We see at least 8 problems with the current setup that we've addressed within FAIR:</p>
+
+        <h3 id="single-point-of-failure">Problem #1: A single point of failure</h3>
+
+        <p>Currently, every WordPress site depends on WordPress.org for plugin and theme installation and updates. This creates a single point of failure for an infrastructure that powers more than 40% of the web.</p>
+
+        <p>If WordPress.org experiences downtime, changes its policies, or is compromised, the effect ripples through the entire ecosystem. The system relies on a single operator rather than a neutral public foundation, concentrating control in one place.</p>
+
+        <p>Even if the technical aspects of a single point of failure are addressed, the current system is operated by a single entity, which creates a single vendor risk. This is similar to a single point of technical failure, but it is a business or operational risk distinct from the technical one. Free software mitigates this for the code, but not for the software distribution mechanism.</p>
+
+        <h4 id="distritute-risk" class="text-blue"><strong>FAIR's solution:</strong> Distribute the risk</h4>
+
+        <p>FAIR replaces central dependency with a federated network of repositories. The FAIR plugin allows sites to install and update plugins and themes from multiple verified sources. If one server or network goes offline, others continue to function.</p>
+
+        <h3>Problem #2: Outdated architecture</h3>
+
+        <p>The WordPress.org plugin and theme directories were designed in the early 2000s for manual downloads and centralized submission. That model hasn't evolved with modern standards for software supply chains or automation. For example, the repositories for themes and plugins are still using a single Subversion (SVN) repository, when the majority of the world has switched to Git or other more modern (usually distributed) systems. In fact, the plugin repository is literally that: one, single, centrally-controlled repository, that already presents challenges when synced in its entirety.</p>
+
+        <aside class="bg-light-gray p-6 rounded my-6">
+          <h3>Aside: What is Git?</h3>
+
+          <p class="mb-0">Git was developed over ten days in April 2005 by Linus Torvalds to manage the development of the Linux kernel. Git took a fundamentally different approach because current code management systems (CVS and Subversion specifically) were centralized, and did not reflect the distributed nature of Linux kernel development. Ten years later, Git had displaced Subversion to become – and remain – the world's leading source code management platform.</p>
+        </aside>
+
+        <p>Developers previously found it hard to distribute plugins and themes outside of WordPress.org, as every alternative updater had to reinvent its own update system, resulting in duplicated code and maintenance overhead.</p>
+
+        <h4 class="text-blue"><strong>FAIR's solution:</strong> Modern package management</h4>
+
+        <p>FAIR introduces a unified, decentralized package management system. Developers can self-host their repositories or use open aggregators such as AspireCloud. The FAIR plugin manages discovery, installation, and updates through a consistent interface, similar to how modern ecosystems like npm or PyPI work.</p>
+
+        <h3>Problem #3: Limited security and provenance</h3>
+
+        <p>Outside WordPress.org, there is no consistent way to verify the origin of a plugin or theme or whether it has been altered. Even within the directory, there is limited visibility into provenance and dependencies.</p>
+
+        <h4 class="text-blue"><strong>FAIR's solution:</strong> Verifiable authenticity</h4>
+
+        <p>Every FAIR package carries cryptographic signatures and a decentralized, globally unique identifier that confirms its source. Metadata includes a software bill of materials (SBOM) and publisher attestations. The FAIR plugin validates signatures locally before installation, ensuring that users always receive the authentic version from its canonical source.</p>
+
+        <h3>Problem #4: Moderation that doesn't scale</h3>
+
+        <p>Centralized moderation, or vetting of plugin security and authenticity, depends on a small volunteer team that reviews and manages tens of thousands of plugins and themes. This process was effective when the community was smaller, but it cannot scale to meet the demands of a global ecosystem where thousands of updates are published every week. In the current centralized system, only plugins and themes listed in the WordPress.org repository undergo verifiable third-party scrutiny, excluding a great many that are not eligible for policy rather than security reasons, or due to publisher preference. FAIR's moderation architecture supports the moderation of all packages, including commercial offerings.</p>
+
+        <p>Recently, WordPress.org has introduced automated checks on plugin updates, similar to how they review initial submissions. These tools catch certain issues (such as obvious code errors, security red flags, or licensing problems) before updates are approved. While this improves consistency and reduces the workload on human reviewers, automated systems alone cannot guarantee safety or quality. They cannot assess context, intent, or the nuanced security and privacy implications of complex code changes.</p>
+
+        <blockquote>
+          <p>"No amount of source-level verification or scrutiny will protect you from using untrusted code."</p>
+          <p>Ken Thompson, co-creator of Unix</p>
+        </blockquote>
+
+        <p>WordPress plugins also often integrate with external services, which need to be vetted to ensure the safety and privacy of user information – a task automated systems cannot do on their own. The tools must be constantly monitored and modified as new information comes to light. Best practices in security are a moving target.</p>
+
+        <p>With these updates, moderation remains tightly centralized. All decisions, rules, and enforcement mechanisms still flow through one website and one team. Updates from external repositories or custom distribution channels fall completely outside this framework, leaving users without clear visibility into what is safe to install.</p>
+
+        <h4 class="text-blue"><strong>FAIR's solution:</strong> Layered and extensible moderation</h4>
+
+        <p>FAIR replaces single-point moderation with a federated model based on <strong>trust labels</strong>. The FAIR network provides a baseline layer of automated and human moderation that identifies known risks and enforces essential standards. On top of that, any trusted organization can run a <strong>labeler</strong>, an independent moderation service that applies its own checks and assigns additional trust labels.</p>
+
+        <p>Labelers can focus on specific concerns, such as known vulnerabilities (CVEs), accessibility compliance, GDPR readiness, or licensing verification. Site owners, hosts, and agencies can choose which labelers to trust and automatically approve or block installations based on those trust signals.</p>
+
+        <p>This model complements the progress made by WordPress.org's automated checks but removes the bottleneck of a single review pipeline. It allows moderation capacity to scale across the ecosystem and makes safety and compliance transparent, verifiable, and community-driven. From the outset, FAIR's moderation system is designed to apply to each release of each package – something many people assumed was already being done on WordPress.org.</p>
+
+        <h3>Problem #5: Opaque governance</h3>
+
+        <p>WordPress.org's governance model is not transparent. Decisions, policies, and moderation standards are largely undocumented and spread by word of mouth. The cost of maintaining a centralized infrastructure also falls to a small group, creating long-term sustainability issues.</p>
+
+        <h4 class="text-blue"><strong>FAIR's solution:</strong> Open, transparent governance</h4>
+
+        <p>FAIR operates under the FAIR Web Foundation, a project under the Linux Foundation. It separates governance into a <strong>Technical Steering Committee</strong>, composed of contributors who oversee technical decisions, and a <strong>Governing Board</strong> of sponsors and organizations that provide funding and oversight.</p>
+
+        <h3>Problem #6: Sustainability</h3>
+
+        <p>In September 2025, almost a dozen operators of centralized repositories for open source software <a href="https://openssf.org/blog/2025/09/23/open-infrastructure-is-not-free-a-joint-statement-on-sustainable-stewardship/" rel="noopener noreferrer" target="_blank">issued an open letter warning<span class="sr-only"> (opens in new tab)</span></a> that the cost of running such repositories at zero cost is not sustainable. This aligns with comments made about the cost of running WordPress.org, which is borne by a single entity. Any organization can go under for reasons it can't control, like lawsuits, accidents, or unexpected changes in the law or economy. If that were to happen to WordPress.org, the impact on the entire ecosystem would be severe.</p>
+
+        <h4 class="text-blue"><strong>FAIR's solution:</strong> Shared responsibility and costs</h4>
+
+        <p>In a federated system of distributed repositories, each repository bears a small portion of the cost of providing the service, so operational costs are shared rather than centralized. This way, the stability of the ecosystem doesn't depend on the survival or funding of any single organization.</p>
+
+        <p>FAIR's distributed model also puts hosting choices into the hands of the package's publisher, allowing them to address any concerns over digital sovereignty.</p>
+
+        <h3>Problem #7: Regulatory compliance for data privacy</h3>
+
+        <p>The <strong>EU's General Data Protection Regulation (GDPR)</strong> requires transparency, accountability, and data minimization from all organizations handling personal information. Similar principles are reflected in other jurisdictions: <strong>California's Consumer Privacy Act (CCPA)</strong> expands user rights to data transparency and accountability, while Canada's <strong>Personal Information Protection and Electronic Documents Act (PIPEDA)</strong> requires organizations to clearly document how data is collected, stored, and protected. Collectively, these laws are raising expectations for verifiable software trustworthiness and responsible data handling.</p>
+
+        <p>Requests to the WordPress.org plugin and theme directories send and process user data, including plugin author names and URLs, IP addresses, and other personally identifiable information, which creates ongoing privacy and compliance risks. Data collected in this way is mostly not shared with the wider community, nor is its collection fully disclosed. The information is, however, available to the administrators of WordPress.org for undisclosed or unclear purposes.</p>
+
+        <h4 class="text-blue"><strong>FAIR's solution</strong>: Privacy by design</h4>
+
+        <p>FAIR's architecture minimizes data collection by design. Sites connect directly to the repositories they choose, without routing the majority of requests through central servers, which may track personally identifiable information in the request. Each package includes signed metadata and provenance documentation so users can see who published it and where it originates, without exposing their own personal or usage data.</p>
+
+        <p>The initial implementation will include a limited number of central servers, primarily for aggregating usage statistics (which are optional), mandated security labelers (which help ensure the data is what it should be), and decentralized identifier (DID) resolvers. The DID system is similar to how TLS (formerly SSL) certificates are issued by a handful of certificate authorities (CAs).&nbsp; Even DNS resolution, which is largely decentralized, traces back to a single authoritative nameserver for each domain name. FAIR's architecture design anticipates high-availability environments with redundancy to ensure its resilience. FAIR is designed to permit hosts and providers to create their own nodes and swap others out, in order to emphasize choice, flexibility, and resilience, which can only be gained through decentralization.</p>
+
+        <aside class="bg-light-gray p-6 rounded my-6">
+          <h3>Aside: what is DID?</h3>
+
+          <p class="mb-0">Decentralized Identifier (DID) – based on a specification from the W3C, DIDs provide a globally unique identifier that can be verified by a DID resolver, which includes specific metadata supporting the identity being verified, such as a domain alias linking a specific domain to the DID using a DNS record. The FAIR Protocol initially supports DID:PLC and DID:Web formats, but there are over 100 different DID methods available, a number of which would be suitable for use by FAIR as alternatives to PLC and Web.</p>
+        </aside>
+
+        <p>This decentralized approach aligns with GDPR and similar legislation's principles of accountability, transparency, and data minimization, helping developers and site owners meet compliance obligations while preserving user privacy.</p>
+
+        <h3>Problem #8: Cyber Resilience Act and supply chain security</h3>
+
+        <p>The <strong>EU's Cyber Resilience Act (CRA)</strong> establishes strict requirements for software security, vulnerability management, and supply chain integrity. Since the current distribution model does not properly support CRA compliance, it blocks publishers using the platform from legal compliance.</p>
+
+        <p>Under these standards, software publishers and distributors must disclose dependencies and third-party libraries they include and be able to prove the origin and authenticity of their code, disclose vulnerabilities responsibly, and maintain a verifiable record of changes.</p>
+
+        <p>Traditional plugin distribution systems make this difficult. Centralized repositories like WordPress.org generally do not require nor provide complete transparency about package provenance, dependency chains, or updates. Developers have no standardized way to prove the integrity of their software, and users cannot independently verify what they install. The WordPress community has been heavily impacted in the past by exploits of third-party libraries, and the CRA requirement helps address this.</p>
+
+        <h4 class="text-blue"><strong>FAIR's solution</strong>: Verifiable trust and traceability</h4>
+
+        <p>The FAIR protocol calls for every package to include a <strong>software bill of materials (SBOM)</strong>, cryptographic signatures, and provenance documentation that verify exactly who published it and what it contains. FAIR's trust labeling system is designed to integrate vulnerability data from external providers, ensuring that known issues with packages and bundled dependencies can be surfaced quickly and consistently.</p>
+
+        <p>This framework directly supports the compliance and resilience goals set out by the <strong>CRA:</strong> software integrity, responsible data stewardship, vulnerability disclosure, and transparent supply chain management. FAIR provides a standards-ready model for the WordPress ecosystem and beyond, enabling verifiable trust across the entire software supply chain.</p>
+
+        <h2>A modern, federated supply chain</h2>
+
+        <p>FAIR's architecture secures and decentralizes the software supply chain for WordPress and beyond.</p>
+
+        <ul>
+          <li><strong>FAIR Plugin</strong> brings technical independence to any site, reducing dependency on WordPress.org services.</li>
+          <li><strong>Mini FAIR Repo</strong> lets hosts, organizations, and developers host their own repositories.</li>
+          <li><strong>AspireCloud</strong> provides open discovery and indexing across the network of FAIR repositories.</li>
+          <li><strong>Moderation and analytics tools</strong> ensure safety and transparency without compromising privacy.</li>
+        </ul>
+
+        <p>This model strengthens the open web by ensuring that no single organization controls how software is distributed. FAIR democratizes the publishing of software to protect users, empower developers, and provide a foundation for a more resilient future.</p>
+
+        <h2>The future will <em>not</em> be centralized</h2>
+
+        <p>Centralization was a practical solution twenty years ago. Today, it is a liability. FAIR provides a new model for distributing software securely, transparently, and collaboratively; one that reflects how the modern internet works.</p>
+
+        <p><strong>Federated. Independent. A FAIR future.</strong></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(h2) {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(h3) {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(h4) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(ul) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  .prose :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+  .prose :global(blockquote) {
+    border-left: 4px solid var(--color-blue);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(blockquote p:last-child) {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9em;
+  }
+  .prose :global(aside h3) {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+  .prose :global(aside p.mb-0) {
+    margin-bottom: 0;
+  }
+</style>

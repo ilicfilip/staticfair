@@ -67,7 +67,7 @@ This milestone is complete only when all are true:
 - [x] **S02: Design Refresh & Accessibility** `risk:medium` `depends:[S01]`
   > After this: Homepage has the full refreshed visual design with WCAG AA-compliant colors, responsive layout, placeholder logo/favicon, visible focus indicators, skip-to-content link, and keyboard-navigable header/nav. Lighthouse accessibility score ≥90 on homepage.
 
-- [ ] **S03: Content Migration** `risk:medium` `depends:[S01]`
+- [x] **S03: Content Migration** `risk:medium` `depends:[S01]`
   > After this: All 18 static pages and 9 blog posts render with correct content. Blog listing page shows posts sorted by date. RSS feed at /rss.xml validates. Images optimized via Astro Image component. Content parity verified against live WP site.
 
 - [ ] **S04: SEO & Structured Data** `risk:low` `depends:[S01,S03]`

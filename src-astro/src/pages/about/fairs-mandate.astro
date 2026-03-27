@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="FAIR's Mandate — Federated and Independent Repositories"
+  description="Why FAIR exists: decentralizing software distribution to increase resilience, empower communities, and preserve choice and control."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">FAIR's Mandate</h1>
+
+        <h2>The Need for FAIR</h2>
+
+        <p>Most content management systems today depend on a single, centralized repository to deliver plugins, themes, and updates. This centralization offers convenience but also creates a single point of failure for that ecosystem. It limits the diversity of available tools. If the central service changes its rules, suffers downtime, or is discontinued, the entire ecosystem can be disrupted.</p>
+
+        <p>For developers, centralization can mean gatekeeping. Your work might not reach users unless it meets the policies or priorities of the platform operator. For site owners, it means fewer choices and reliance on one provider for critical updates and security patches.</p>
+
+        <p>The FAIR approach addresses these issues by:</p>
+
+        <ul>
+          <li><strong>Decentralizing distribution,</strong> so many independent repositories can participate in a shared package network.</li>
+          <li><strong>Increasing resilience,</strong> so if one repository goes offline others can still provide the same packages.</li>
+          <li><strong>Empowering communities,</strong> so organizations, businesses, and open-source groups can host and manage their own repositories.</li>
+          <li><strong>Preserving choice and control,</strong> so developers decide how and where their work is published, and users choose where they get it.</li>
+        </ul>
+
+        <p>FAIR makes it possible for plugin and theme ecosystems to grow in a way that is more stable, more open, and less dependent on any single point of control. That's why we're convinced the web needs FAIR.</p>
+
+        <h3>What Sparked FAIR</h3>
+
+        <p>The immediate spark came from a governance controversy in the WordPress ecosystem. When updates were pushed to Advanced Custom Fields's (ACF) plugin slug outside of the development team that maintained it in October 2024, it affected how updates to the plugin were delivered and limited access to earlier free versions. This showed how a decision by one individual or organization could impact the stability of the entire ecosystem.</p>
+
+        <p>The event triggered an open letter from community leaders, including <a href="https://joost.blog/wordpress-leadership/" rel="noopener noreferrer" target="_blank">Joost de Valk<span class="sr-only"> (opens in new tab)</span></a> and <a href="https://marucchi.com/wordpress-leadership-continued/" rel="noopener noreferrer" target="_blank">Karim Marucchi<span class="sr-only"> (opens in new tab)</span></a>, calling for structural reform. Some signatories were later banned from contributing to WordPress.org, which reinforced the need for an alternative model where no single individual or organization could dictate access or policy.</p>
+
+        <p>Out of this movement came <a href="https://aspirepress.org/" rel="noopener noreferrer" target="_blank">AspirePress<span class="sr-only"> (opens in new tab)</span></a>, a mirrored plugin repository with transparent governance and independent hosting. AspirePress proved that there were practical ways to run an alternative to the centralized WordPress.org repository.</p>
+
+        <p>Developer <strong>Andy Fragen</strong> had been working for years on <a href="https://git-updater.com/" rel="noopener noreferrer" target="_blank">Git Updater<span class="sr-only"> (opens in new tab)</span></a>, a tool that allowed site owners to install and update plugins and themes directly from platforms like GitHub, GitLab, and Bitbucket. Git Updater demonstrated that plugin and theme updates could be handled entirely outside of the WordPress.org system.</p>
+
+        <p>In a <a href="https://joost.blog/wordpress-leadership/" rel="noopener noreferrer" target="_blank">blog post<span class="sr-only"> (opens in new tab)</span></a> outlining a vision for a healthier, more resilient ecosystem, <strong>Joost de Valk coined the name "FAIR"</strong>, short for <strong>Federated and Independent Repositories</strong>. What began as a placeholder quickly became the name for the growing initiative.</p>
+
+        <p>These streams of experience, frustration, and innovation came together under the <strong>Linux Foundation</strong>, which now provides FAIR with neutral, transparent governance. The result is a system designed to improve stability, strengthen security, and give both developers and users real choice and control.</p>
+
+        <h2>Core Values</h2>
+
+        <p>The FAIR Package Manager exists to make open-source content management ecosystems more stable, open, and resilient. We believe that healthy software ecosystems are built on shared responsibility, transparency, and the freedom for anyone to participate.</p>
+
+        <h3>1. Openness</h3>
+
+        <p>We build everything in the open. Anyone can view our discussions, decisions, and code without hidden agendas or closed rooms. Our projects are licensed under recognized open-source and open-content licenses, so anyone can use, study, share, and improve them. We welcome contributions from individuals, companies, nonprofits, and community groups, as long as they follow our shared guidelines and code of conduct.</p>
+
+        <h3>2. Neutral governance</h3>
+
+        <p>FAIR operates under the Linux Foundation, which provides a proven framework for neutral, transparent governance. This structure ensures that no single person, company, or group of related companies can ever gain full control over the project's direction or resources. Decisions are made collectively through our Technical Steering Committee, which represents a diverse set of voices in the community.</p>
+
+        <h3>3. Community empowerment</h3>
+
+        <p>Our community is at the heart of everything we do. We encourage contributors to grow into leadership roles through consistent participation, skill, and trust. You do not need to be a developer to have an impact. Translators, documentation writers, testers, community organizers, and many others play vital roles in making FAIR successful.</p>
+
+        <h3>4. Resilience and independence</h3>
+
+        <p>We design our technology to avoid single points of failure. FAIR enables a network of independent repositories rather than relying on one central directory. If one repository goes offline, others can continue to serve the same packages. This approach protects the ecosystem from disruptions and ensures long-term independence.</p>
+
+        <h3>5. User choice and developer freedom</h3>
+
+        <p>Users are free to choose which repositories they trust and want to use. Developers decide how and where they publish their work, without being limited by the policies or priorities of a single central authority. This freedom encourages diversity and innovation across the entire ecosystem.</p>
+
+        <h3>6. Ecosystem stability</h3>
+
+        <p>We aim to build tools and processes that strengthen the ecosystem over time. By encouraging decentralization, openness, and shared stewardship, we create an environment that can adapt to change and continue to serve its users and contributors for years to come, regardless of what happens to any individual participant.</p>
+
+        <p>For more detail on FAIR's organizational structure, please refer to <a href="/governance/">Policy &amp; Governance</a>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(h3) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(ul) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  .prose :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+</style>

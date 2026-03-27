@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Policy & Governance — FAIR"
+  description="How FAIR is governed: organizational structure, decision-making process, and the separation of technical and non-technical responsibilities."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">Policy &amp; Governance</h1>
+
+        <p>The FAIR Package Manager project is an open-source initiative of The FAIR Web Foundation, a Linux Foundation project.</p>
+
+        <p>Our governance model emphasizes a clear separation of technical and non-technical responsibilities, ensuring that strategy, resources, and operations are managed distinctly from technical direction and project development.</p>
+
+        <p>Decision-making is grounded in open participation and consensus, fostering transparency, neutrality, and broad community representation. This approach provides the structure and stability needed for the FAIR Package Manager to grow and thrive over the long term.</p>
+
+        <h2>Organizational Structure</h2>
+
+        <p>The FAIR Package Manager is supported by the FAIR Web Foundation, which is a directed fund of the <a href="https://www.linuxfoundation.org/" rel="noopener noreferrer" target="_blank">Linux Foundation<span class="sr-only"> (opens in new tab)</span></a>. The Linux Foundation provides a neutral and transparent home for open source projects, offering legal, operational, and community support. This ensures that no single person or company can take control of the project and that the FAIR Package Manager remains community-driven, transparent, and sustainable.</p>
+
+        <p>Our governance model is designed to balance strategic oversight with technical leadership. Some elements of this structure are in place today, while others will be established as the project grows:</p>
+
+        <h3>The FAIR Web Foundation Governing Board <em>(planned)</em></h3>
+
+        <p>The Governing Board will serve as the business and operational leadership of The FAIR Web Foundation. It will manage budgets, membership, fundraising, strategic priorities, and non-technical policies. Membership will include representatives from organizations that formally join FAIR, along with appointed or elected community seats, ensuring diversity of perspectives and interests.</p>
+
+        <p>The Board's role is to provide the resources, strategic direction, and oversight needed for the FAIR Package Manager to thrive, while safeguarding neutrality and broad community representation.</p>
+
+        <h3>Technical Advisory Council (TAC) <em>(planned)</em></h3>
+
+        <p>The TAC is part of the FAIR Package Manager's governance model and is intended to provide a forum for technical alignment across projects, should there be more than one in the future. Its purpose is to bring together technical leads, share best practices, and advise on standards and interoperability. While the TAC will not make financial or membership decisions, it will help ensure coherence and collaboration where multiple technical initiatives are involved.</p>
+
+        <h3>Technical Steering Committee (TSC)</h3>
+
+        <p>The TSC is responsible for the technical direction of the FAIR Package Manager. It oversees architecture, code contributions, release processes, and quality standards. In simple terms, this group ensures the technology is sound, reliable, and continually evolving.</p>
+
+        <p>Contributions to the FAIR Package Manager take many forms, and not all involve code. Documentation, testing, accessibility, and related work are considered technical contributions as well, since they are essential to the project's overall success.</p>
+
+        <p>The TSC is led by three co-chairs, who share responsibility for guiding its work. <a href="https://github.com/fairpm/tsc/blob/main/contributing.md#technical-steering-committee-tsc" rel="noopener noreferrer" target="_blank">Learn more about the TSC and its leadership<span class="sr-only"> (opens in new tab)</span></a>.</p>
+
+        <h4>Working Groups (WGs)</h4>
+
+        <p>Working Groups are established by the TSC to focus on specific areas, such as infrastructure, software development, or documentation. They are open to contributors, operate transparently, and report back to the TSC. This structure allows the project to stay agile and empowers community members to make a direct impact.</p>
+
+        <ul>
+          <li><a href="https://github.com/fairpm/tsc/blob/main/working-groups/README.md" rel="noopener noreferrer" target="_blank">Learn more about Working Groups<span class="sr-only"> (opens in new tab)</span></a></li>
+          <li><a href="/get-involved/fair-working-groups/">Learn about our active Working Groups</a></li>
+        </ul>
+
+        <h2>Decision-Making Process</h2>
+
+        <p>The FAIR Package Manager relies on consensus as the primary decision-making model. In practice, most decisions are made through discussion and agreement on <a href="https://github.com/fairpm/" rel="noopener noreferrer" target="_blank">GitHub<span class="sr-only"> (opens in new tab)</span></a> or in the weekly FAIR Technical Steering Committee (TSC) calls, with a "lazy consensus" approach: unless objections are raised, work is considered approved. This fosters collaboration while keeping the project moving.</p>
+
+        <p>When consensus cannot be reached, or when the project charter requires a formal decision (such as elections, governance changes, or other specified matters), the Technical Steering Committee may call a vote. The voting process is defined in the <a href="https://github.com/fairpm/tsc/blob/1c16ad47aab499b2dc64c1d52d52079982d53b7f/charter.md" rel="noopener noreferrer" target="_blank">project charter<span class="sr-only"> (opens in new tab)</span></a>.</p>
+
+        <p>The Governing Board of the FAIR Web Foundation will not have a vote on technical matters.</p>
+
+        <p>Working Groups (WGs) make operational decisions within their scope (e.g., infrastructure, documentation, security). Like the TSC, they generally operate by consensus, with outcomes reported back to the TSC.</p>
+
+        <p>This structure keeps technical and non-technical decision-making clearly separated, with consensus as the foundation and voting available as a transparent fallback when required.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(h3) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(h4) {
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(ul) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  .prose :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+</style>

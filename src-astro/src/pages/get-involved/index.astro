@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Get Involved — FAIR"
+  description="Contribute to the FAIR Package Manager through GitHub, Slack, testing, or the Linux Foundation. Many ways to help from development to community feedback."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">Get Involved</h1>
+
+        <p>Do you want to help out the project? We're eager to welcome more contributors, and there are many ways you can help us out, ranging from testing, translating, development, or providing community feedback!</p>
+
+        <h2>GitHub</h2>
+
+        <p>The FAIR Package Manager primarily <a href="https://github.com/fairpm" rel="noopener noreferrer" target="_blank">works on GitHub<span class="sr-only"> (opens in new tab)</span></a> — it's the home for all of our initiatives, and where we do most of our work. If you want to contribute to FAIR, this is where you'll find all of our projects. Whether you want to help <a href="https://github.com/fairpm/fair-parent-theme" rel="noopener noreferrer" target="_blank">refine the website<span class="sr-only"> (opens in new tab)</span></a>, build out the <a href="https://github.com/fairpm/fair-protocol" rel="noopener noreferrer" target="_blank">specifications for the package manager<span class="sr-only"> (opens in new tab)</span></a>, or <a href="https://github.com/fairpm/fair-plugin" rel="noopener noreferrer" target="_blank">contribute to our plugin<span class="sr-only"> (opens in new tab)</span></a>, GitHub is the place to go!</p>
+
+        <p><a href="https://github.com/fairpm/tsc/blob/main/getting-started.md" rel="noopener noreferrer" target="_blank">Check out our Getting Started guide<span class="sr-only"> (opens in new tab)</span></a> for essential information.</p>
+
+        <p>Anybody with a GitHub account can contribute to our repositories and be recognized as a contributor to the project. If you don't have an account yet, you can <a href="https://github.com/signup" rel="noopener noreferrer" target="_blank">create a GitHub account for free<span class="sr-only"> (opens in new tab)</span></a>. Be aware that all commits to <a href="https://github.com/fairpm/tsc?tab=contributing-ov-file" rel="noopener noreferrer" target="_blank">FAIR projects must be signed off<span class="sr-only"> (opens in new tab)</span></a> in order to be merged.</p>
+
+        <h2>Chat</h2>
+
+        <p><a href="https://chat.fair.pm" rel="noopener noreferrer" target="_blank">Join our Slack instance<span class="sr-only"> (opens in new tab)</span></a> to discuss the project outside of GitHub. While we try to keep decision making inside our GitHub issues and pull requests, a lot of discussion happens in Slack.</p>
+
+        <h2>OpenProfile/LFX</h2>
+
+        <p>FAIR's governance operates through the Linux Foundation. As such, if you want to attend project meetings, you'll need to <a href="https://lfx.linuxfoundation.org/" rel="noopener noreferrer" target="_blank">create a free profile on the Linux Foundation's Open Profile platform<span class="sr-only"> (opens in new tab)</span></a>. This platform also gives you <a href="https://zoom-lfx.platform.linuxfoundation.org/meetings/fair-package-manager?view=month" rel="noopener noreferrer" target="_blank">access to calendars<span class="sr-only"> (opens in new tab)</span></a>, meeting invites and recordings of past working group meetings.</p>
+
+        <h2>Testing FAIR</h2>
+
+        <p>You can use FAIR on your own website today. Take a test drive and report any issues you see.</p>
+
+        <h3>Connect your site to FAIR with the FAIR plugin</h3>
+
+        <p>The FAIR plugin is no different from any other plugin, and there's no configuration required. Download the latest version from the <a href="https://github.com/fairpm/fair-plugin/releases" rel="noopener noreferrer" target="_blank">FAIR Plugin releases page<span class="sr-only"> (opens in new tab)</span></a>. You can discuss or report any issues in the <a href="https://github.com/fairpm/fair-plugin/issues" rel="noopener noreferrer" target="_blank">FAIR plugin's GitHub repository<span class="sr-only"> (opens in new tab)</span></a>.</p>
+
+        <h3>Set up your own Mini-FAIR Repo</h3>
+
+        <p>The Mini-FAIR Repo plugin is used to create a repository of plugins on your own site. See <a href="https://github.com/fairpm/mini-fair-repo/tree/main#using-mini-fair" rel="noopener noreferrer" target="_blank">Installation for End Users (GitHub)<span class="sr-only"> (opens in new tab)</span></a> and <a href="https://github.com/fairpm/mini-fair-repo/tree/main#creating-a-did-for-your-package" rel="noopener noreferrer" target="_blank">Creating a DID for your package (GitHub)<span class="sr-only"> (opens in new tab)</span></a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(h3) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+</style>

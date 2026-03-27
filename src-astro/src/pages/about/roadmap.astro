@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Roadmap — FAIR"
+  description="FAIR's 2026 roadmap covering three annual milestones: Trust Systems, Expanding Federation, and Increased Resilience & Efficiency."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">Roadmap</h1>
+
+        <p><strong>FAIR</strong> consists of a number of software projects and working group initiatives that work together to accomplish the goals of the <strong>FAIR Web Foundation</strong>. Each project maintains its own release cadence within an overall framework of three annual milestones applied across all projects and groups within FAIR, as outlined in our <a href="https://github.com/fairpm/tsc/blob/main/process/release-calendar.md" rel="noopener noreferrer" target="_blank">Release Cadence Process<span class="sr-only"> (opens in new tab)</span></a>. These milestones will fall in late April, mid-August, and early December.</p>
+
+        <p>FAIR's <a href="/governance/technical-steering-committee/">Technical Steering Committee</a> sets the focus or emphasis for each milestone, which is applied broadly with individual projects and working groups contributing toward the overall milestone goals within their areas of responsibility.</p>
+
+        <h2 id="2026-milestones">2026 Milestones</h2>
+
+        <h3 id="fair-trust-systems">(1) FAIR Trust Systems</h3>
+
+        <p><strong>Milestone Target:</strong> April 26, 2026</p>
+
+        <p>The first milestone for 2026 focuses on building FAIR's Trust Systems, including work on <strong>FAIR Forge</strong> tools to assist with package labelling and feeding trust signals to a scoring algorithm. Along with documenting these trust procedures, FAIR will begin re-bundling some of the most popular plugins on WordPress.org to meet the FAIR Protocol specification, including additional metadata and cryptographic package signing. Forge tools will be developed to create a separate metadata document for each federated package, and present it as a human-readable document for review by FAIR and by the package's maintainers.</p>
+
+        <p>Other efforts for this milestone include some refactoring of <strong>FAIR Beacon</strong> to simplify its installation and add some developer-centric enhancements. <strong>AspireCloud</strong> will begin logging anonymized analytics data to make it available through an API endpoint for FAIR's analytics aggregator when work on it begins later in the year. Our policy for this data will balance openness and privacy, meaning that we will not store analytics data in a way that is personally identifiable: <em>if we can't share it publicly, we won't store it privately.</em></p>
+
+        <p>The flagship <strong>FAIR Connect</strong> plugin will see at least two releases within this milestone, with versions 1.3 and 1.4 targets on or about February 24<sup>th</sup> and April 21<sup>st</sup>. Among other progressive enhancements, these releases will include improvements for browser warnings, increasing support for federated themes and distribution of beta-release packages for opt-in testing. For both <strong>FAIR Connect</strong> and <strong>FAIR Explorer</strong>, the package search interface will start being improved to support faceted search, which is already supported within AspireCloud's API.</p>
+
+        <h3 id="expanding-federation">(2) Expanding Federation</h3>
+
+        <p><strong>Milestone Target:</strong> August 16, 2026</p>
+
+        <p>Building on work in the first milestone, FAIR will begin expanding the number of federated packages indexed by <strong>AspireCloud</strong>, where work will include internal/admin dashboard enhancements for indexing and managing federated packages based on approvals from FAIR's trust systems.</p>
+
+        <p>During this phase, a simplified migration path will be offered for all packages hosted in the official WordPress repository to simplify the approval process by inheriting trust from the WordPress.org review process. This will allow FAIR to index the package using the FAIR Protocol rather than mirroring it from the WordPress repository, simplifying distribution for software publishers. Packages currently distributed through other means (<em>e.g.</em>, directly from GitHub, or other websites) will have a clear and open process for validating and submitting their work for federated distribution.</p>
+
+        <p>To support further expansion, FAIR will engage directly with commercial software publishers to assess needs and devise robust solutions for authenticated API endpoints to enable payment gateways and license key validation prior to installing or updating their packages. This will facilitate website administrators' ability to purchase software licenses and manage subscriptions as they do now, but to <em>also</em> discover and access those functions from within their WordPress dashboard, where their plugins can be included in users' search results.</p>
+
+        <p>Also within this milestone, FAIR's <strong>Trust Labeller</strong> will extend <strong>Policy Engine</strong> support to enable configurations that hide or block packages from being installed or updated based on specific labels. Work will begin on our aggregated analytics implementation to collate information from multiple sources for improved accuracy in reporting of statistics like ratings and install counts, with other information of interest to package maintainers becoming accessible from their <strong>Beacon</strong> dashboard to report package download and active install counts along with available statistical information about versions and environments where their packages are being used.</p>
+
+        <h3 id="increased-resilience-efficiency">(3) Increased Resilience &amp; Efficiency</h3>
+
+        <p><strong>Milestone Target:</strong> December 6, 2026</p>
+
+        <p>As FAIR scales up, <strong>infrastructure</strong> upgrades will continue being addressed with scaleable hosting improvements where indicated, and in system architecture design if necessary to improve reliability and performance for a growing federated network. Network resilience will be improved throughout the year, with this milestone period being used to review and adjust any iterative improvements to date in order to prepare for continued scaling.</p>
+
+        <p>As more packages become distributed using the FAIR Protocol rather than .org-mirroring or standalone third-party sources, the vetting of all packages through <strong>Forge</strong> processes, <strong>Trust Scoring</strong>, and <strong>Labelling</strong> is projected to place additional demand on FAIR's internal systems and processes, and we expect this will drive a significant increase in the need for contributors to work on teams applying these procedures and guidelines within the FAIR ecosystem. An ongoing (if sometimes quiet) effort, we anticipate <strong>contributor recruitment</strong> will feature prominently within this milestone cycle.</p>
+
+        <p>Additional features and upgrades to be deployed for this milestone will largely depend on FAIR's experience over the previous two milestones in scaling up and gathering feedback. <strong>FAIR Forge</strong> tooling will be extended to include additional trust signals, including repository health reports and possible support for <a href="https://www.w3.org/TR/vc-data-model-2.0/" rel="noopener noreferrer" target="_blank">verifiable credentials<span class="sr-only"> (opens in new tab)</span></a>. More stringent security practices will be reviewed when evaluating packages with large numbers of users. Re-bundling and vetting of legacy WordPress (mirrored) packages will grow to cover the top 5-10,000 packages.</p>
+
+        <h2 id="other-2026-roadmap-objectives">Other 2026 Roadmap Objectives</h2>
+
+        <p>2026 will include definite objectives which have not yet been assigned to a milestone, as well as some still under consideration or in an analysis phase. For example, FAIR intends to design and implement a notification and warning system to alert users of changes to any Package DID or download URI endpoint. These occurrences may be commonplace, since DIDs intentionally make package hosting portable, but site administrators should be notified whenever this occurs. FAIR plans to maintain an audit record of all such changes as a supply chain failsafe measure. With the specific design of this system still underway, it is not fixed to a milestone, but is an objective for 2026. Other definite goals include:</p>
+
+        <ul>
+          <li>a public announcement of the FAIR Web Foundation's board and its committee members;</li>
+          <li id="has-note-1">development and launch of FAIR's branding, to follow <em>after</em> the board announcement;<sup><a href="#footnote-1">[1]</a></sup></li>
+          <li>iterative changes are anticipated to improve FAIR's Trust Scoring algorithm over time as new trust signals are added and reporting of existing ones is improved; and</li>
+          <li>documentation releases, which are not fixed to a milestone since they will continue throughout the year and become an ongoing process of <a href="https://en.wikipedia.org/wiki/Kaizen" rel="noopener noreferrer" target="_blank">continuous improvement<span class="sr-only"> (opens in new tab)</span></a>, overseen by FAIR's Community and Documentation working groups.</li>
+        </ul>
+
+        <hr />
+
+        <p id="footnote-1" class="text-sm text-gray-600">Note 1: We've taken some criticism for neglecting this, but <em>functionally</em>, it is not a technical matter and falls outside the mandate of FAIR's Technical Steering Committee, where technical aspects of the project have been our sole focus to this point. <a href="#has-note-1">⤶ Return to text</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(h2) {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(h3) {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(ul) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  .prose :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+  .prose :global(hr) {
+    margin: 2rem 0;
+    border-color: var(--color-light-gray);
+  }
+  .prose :global(sup a) {
+    text-decoration: none;
+    color: var(--color-blue);
+  }
+</style>

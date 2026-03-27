@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="FAIR Working Groups — Get Involved"
+  description="Overview of FAIR's active and archived Working Groups organized under the Technical Steering Committee, including AspireCloud, Community, FAIR, Infrastructure, and Website groups."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">FAIR Working Groups</h1>
+
+        <p>The FAIR Technical Steering Committee (TSC) organizes much of its efforts into Working Groups, often abbreviated WG in general communication. Each group has a specific mandate for its area of responsibility, and may hold separate meetings to plan and coordinate work. Some WGs are temporary, while others are permanent to address an ongoing need.</p>
+
+        <p>See also: <a href="https://github.com/fairpm/tsc" rel="noopener noreferrer" target="_blank">GitHub — fairpm/tsc: Technical Steering Committee information and documentation<span class="sr-only"> (opens in new tab)</span></a></p>
+
+        <h2>Active Working Groups</h2>
+
+        <h3>AspireCloud Working Group</h3>
+
+        <p><strong>Special Note:</strong> This working group was formed in collaboration with <a href="https://aspirepress.org" rel="noopener noreferrer" target="_blank">AspirePress<span class="sr-only"> (opens in new tab)</span></a>, who began work in October 2024 before the formation of FAIR. Future development of certain AspirePress projects will continue under the FAIR project, with names retained in recognition of the early work of the AspirePress team, most of whom continue to work on these projects under FAIR.</p>
+
+        <ul>
+          <li><strong>Type:</strong> Permanent</li>
+          <li><strong>Began:</strong> July 2025 (October 2024)</li>
+          <li><strong>Chat:</strong> #wg-aspirecloud</li>
+          <li><strong>Mandate:</strong>
+            <ol>
+              <li>Develop server-side software to index packages and respond to API calls in the WordPress.org format to serve download urls from a mirror of the WordPress.org software repository.</li>
+              <li>Support queries using the FAIR Protocol to provide DID-based package management and to present a unified set of search results for packages from the WordPress.org mirror and any other FAIR Repository it indexes. (e.g., using the Mini-FAIR Repo Plugin)</li>
+              <li>Coordinate with other FAIR software projects to support requirements as needed between projects.</li>
+            </ol>
+          </li>
+        </ul>
+
+        <h4>AspireCloud WG Projects</h4>
+
+        <h5>AspireCloud</h5>
+        <ul>
+          <li><strong>Description:</strong> The primary index for the AspirePress mirror of the WordPress.org repository and initial FAIR Aggregator.</li>
+          <li><strong>Repository:</strong> <a href="https://github.com/aspirepress/AspireCloud" rel="noopener noreferrer" target="_blank">/AspireCloud<span class="sr-only"> (opens in new tab)</span></a></li>
+          <li><strong>Documents:</strong> <a href="https://github.com/fairpm/aspirecloud" rel="noopener noreferrer" target="_blank">/aspirecloud<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+
+        <p><strong>Related AspirePress Projects</strong></p>
+        <ul>
+          <li><strong>Description:</strong> The AspirePress group works with and within FAIR on several related projects which do not have their own WG. For example, these include:</li>
+          <li>AspireSync, which works in a network- and server-friendly fashion to build an initial mirror of packages and keep it updated with packages available from WordPress.org as changes occur.</li>
+          <li>AspireExplorer, a browseable listing of plugins and themes for download from AspirePress mirror</li>
+          <li>AspireHub, a proof-of-concept WordPress plugin which can act as an Aggregator for selectively indexing a manually-curated list of packages.</li>
+          <li><strong>Repositories:</strong> <a href="https://github.com/aspirepress" rel="noopener noreferrer" target="_blank">/aspirepress<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+
+        <h3>Community Working Group</h3>
+        <ul>
+          <li><strong>Type:</strong> Permanent</li>
+          <li><strong>Began:</strong> June 2025</li>
+          <li><strong>Chat:</strong> #wg-community</li>
+          <li><strong>Mandate:</strong> Suggest and oversee community-driven or community-focused initiatives</li>
+        </ul>
+
+        <h4>Community WG Projects</h4>
+        <p><strong>Admin News Feed</strong></p>
+        <ul>
+          <li><strong>Repository:</strong> <a href="https://github.com/fairpm/planet" rel="noopener noreferrer" target="_blank">/planet<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+
+        <h3>FAIR Working Group</h3>
+        <ul>
+          <li><strong>Type:</strong> Permanent</li>
+          <li><strong>Created:</strong> June 2025</li>
+          <li><strong>Chat:</strong> #wg-fair</li>
+          <li><strong>Mandate:</strong> General matters pertaining to the FAIR Protocol and other TSC matters.</li>
+        </ul>
+
+        <h4>FAIR WG Projects</h4>
+
+        <h5>FAIR Protocol</h5>
+        <ul>
+          <li><strong>Repository:</strong> <a href="https://github.com/fairpm/fair-protocol" rel="noopener noreferrer" target="_blank">/fair-protocol<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+
+        <h5>FAIR Plugin</h5>
+        <ul>
+          <li><strong>Description:</strong> (Inherited) Client/Installer plugin created under the Technical Independence WG.</li>
+          <li><strong>Chat:</strong> #fair-plugin</li>
+          <li><strong>Repository:</strong> <a href="https://github.com/fairpm/fair-plugin" rel="noopener noreferrer" target="_blank">/fair-plugin<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+
+        <h5>Mini-FAIR Repository Plugin</h5>
+        <p>A WordPress plugin with a sample implementation of a package repository supporting the FAIR Protocol. The plugin facilitates DID creation and canonical hosting of its code, which can be installed using its DID.</p>
+        <ul>
+          <li><strong>Repository:</strong> <a href="https://github.com/fairpm/mini-fair-repo" rel="noopener noreferrer" target="_blank">/mini-fair-repo<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+
+        <h3>Infrastructure Working Group</h3>
+        <ul>
+          <li><strong>Type:</strong> Permanent</li>
+          <li><strong>Began:</strong> August 2025</li>
+          <li><strong>Mandate:</strong> Maintenance and development of the technical infrastructure</li>
+          <li><strong>Chat:</strong> #wg-infrastructure</li>
+        </ul>
+
+        <h4>Infrastructure WG Projects</h4>
+
+        <h5>FAIR Infrastructure</h5>
+        <ul>
+          <li><strong>Repository:</strong> (currently this is a private repo for security reasons)</li>
+        </ul>
+
+        <p><strong>FAIR Server</strong></p>
+        <ul>
+          <li><strong>Repository:</strong> <a href="https://github.com/fairpm/server" rel="noopener noreferrer" target="_blank">/server<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+
+        <h3>Website Working Group</h3>
+        <ul>
+          <li><strong>Type:</strong> Permanent</li>
+          <li><strong>Began:</strong> July 2025</li>
+          <li><strong>Mandate:</strong> Management of the code and architecture of public-facing websites</li>
+          <li><strong>Chat:</strong> #wg-website</li>
+        </ul>
+
+        <h4>Website WG Projects</h4>
+        <p><strong>FAIR Theme</strong></p>
+        <ul>
+          <li><strong>Repository:</strong> <a href="https://github.com/fairpm/fair-parent-theme" rel="noopener noreferrer" target="_blank">/fair-parent-theme<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+
+        <h2>Archived Working Groups</h2>
+
+        <h3>Technical Independence</h3>
+        <ul>
+          <li><strong>Type:</strong> Temporary</li>
+          <li><strong>Term:</strong> Spring 2025 to June 5, 2025</li>
+          <li><strong>Mandate:</strong> Create a WordPress plugin capable of replacing services supplied by WordPress.org, or redirect to alternate sources via API or RSS as appropriate.</li>
+          <li><strong>Status:</strong> Closed, Successful.</li>
+        </ul>
+
+        <p><strong>Result:</strong> A proof-of-concept plugin was developed to redirect software installations to AspireCloud, replacing other functions which relied on WordPress.org's API with ones run locally within the plugin or from independent third-party sources. The FAIR Plugin was shipped and <a href="https://www.youtube.com/watch?v=owH0xMGsuCw" rel="noopener noreferrer" target="_blank">announced publicly at the Alt-Ctrl event in Basel, Switzerland<span class="sr-only"> (opens in new tab)</span></a> with the announcement of the formation of FAIR and collaboration with AspirePress.</p>
+
+        <p>To support the news feed in the WordPress Admin dashboard, a Planet instance was also created. The FAIR Plugin and Planet instance were handed to other Working Groups to maintain once the goals of the Technical Independence WG were achieved.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(h2) {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(h3) {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(h4) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(h5) {
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(ul), .prose :global(ol) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+  .prose :global(ul) {
+    list-style-type: disc;
+  }
+  .prose :global(ol) {
+    list-style-type: decimal;
+  }
+  .prose :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+</style>

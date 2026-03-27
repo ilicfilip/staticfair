@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Terms of Use — FAIR"
+  description="The FAIR Package Manager follows the Linux Foundation's Terms of Use, setting standardized expectations for use of resources."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">Terms of Use</h1>
+
+        <p>The FAIR Package Manager follows the Linux Foundation's Terms of Use, which set a standardized set of expectations for what we will provide and how our resources can be used.</p>
+
+        <p><a href="https://lfprojects.org/policies/terms-of-use/" rel="noopener noreferrer" target="_blank">Terms of Use at the Linux Foundation Projects<span class="sr-only"> (opens in new tab)</span></a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+</style>

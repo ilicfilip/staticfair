@@ -12,7 +12,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: user
 - Primary owning slice: M001/S03
 - Supporting slices: M001/S01, M001/S04
-- Validation: unmapped
+- Validation: validated — S03 confirmed all 18 pages (1 homepage + 15 static + 2 WP-only) render at preserved URLs. Build produces all expected paths. Content parity spot-checked against live WP for 3 key pages (about, what-is-fair, governance).
 - Notes: Content sources split between fairpm/website-content repo and live WordPress. Pages: homepage, 4 about, 7 governance, 2 get-involved, 1 knowledge base, 1 rethinking-wordpress-distribution
 
 ### R002 — Blog content collection
@@ -23,7 +23,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: user
 - Primary owning slice: M001/S03
 - Supporting slices: M001/S01
-- Validation: unmapped
+- Validation: validated — S03 migrated all 9 posts with Zod-valid frontmatter (title, description, pubDate, author, tags, image). Blog listing shows 9 posts sorted by date. Dynamic route generates individual pages. Build-time schema validation catches mismatched fields.
 - Notes: Posts extracted from WordPress REST API. Schema enforces title, date, description, author, tags, image
 
 ### R003 — RSS feed
@@ -34,7 +34,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: inferred
 - Primary owning slice: M001/S03
 - Supporting slices: none
-- Validation: unmapped
+- Validation: validated — S03 confirmed RSS at /rss.xml with valid `<rss version="2.0">` root, 9 `<item>` elements with title/link/description/pubDate. /feed/ → /rss.xml redirect deferred to S05.
 - Notes: /feed/ redirects to /rss.xml via _redirects
 
 ### R004 — SEO completeness
@@ -89,7 +89,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: research
 - Primary owning slice: M001/S03
 - Supporting slices: none
-- Validation: unmapped
+- Validation: validated — S03 confirmed 5 blog images optimized to WebP in dist/_astro/. Blog HTML references /_astro/*.webp paths with responsive srcset. Images referenced via Markdown syntax flow through Astro's optimization pipeline.
 - Notes: Blog post images extracted from WordPress. Static page images from fairpm/website-content repo assets/
 
 ### R009 — Responsive design
@@ -243,14 +243,14 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 | ID | Class | Status | Primary owner | Supporting | Proof |
 |---|---|---|---|---|---|
-| R001 | core-capability | active | M001/S03 | M001/S01, M001/S04 | unmapped |
-| R002 | core-capability | active | M001/S03 | M001/S01 | unmapped |
-| R003 | core-capability | active | M001/S03 | none | unmapped |
+| R001 | core-capability | active | M001/S03 | M001/S01, M001/S04 | validated (S03: 18 pages at preserved URLs, content parity spot-checked) |
+| R002 | core-capability | active | M001/S03 | M001/S01 | validated (S03: 9 posts, Zod schema, listing, dynamic route) |
+| R003 | core-capability | active | M001/S03 | none | validated (S03: RSS 2.0 with 9 items, valid structure) |
 | R004 | quality-attribute | active | M001/S04 | M001/S01 | unmapped |
 | R005 | quality-attribute | active | M001/S04 | none | partial (S01: generation + filter verified) |
 | R006 | core-capability | active | M001/S05 | none | unmapped |
 | R007 | quality-attribute | active | M001/S02 | M001/S01, M001/S04 | partial (S02: homepage Lighthouse 100%, keyboard nav, focus, ARIA, skip-link) |
-| R008 | quality-attribute | active | M001/S03 | none | unmapped |
+| R008 | quality-attribute | active | M001/S03 | none | validated (S03: 5 images → WebP, responsive srcset) |
 | R009 | quality-attribute | active | M001/S02 | M001/S03 | partial (S02: homepage responsive at 375/768/1280px) |
 | R010 | operability | active | M001/S05 | none | unmapped |
 | R011 | integration | active | M001/S05 | none | unmapped |
@@ -269,6 +269,6 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 - Active requirements: 14
 - Mapped to slices: 14
-- Validated: 2 (R012, R013)
+- Validated: 6 (R001, R002, R003, R008, R012, R013)
 - Partially validated: 3 (R005, R007, R009)
 - Unmapped active requirements: 0

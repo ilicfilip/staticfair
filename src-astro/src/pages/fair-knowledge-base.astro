@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="FAIR Knowledge Base — Federated and Independent Repositories"
+  description="Frequently asked questions, glossary, and reference information about the FAIR Package Manager project, its architecture, and key concepts."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">FAIR Knowledge Base</h1>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <p>We're gathering focused answers to the most common questions about the FAIR project, its governance, security, and technical operations in the Technical Steering Committee repository on GitHub:</p>
+
+        <p>Go to the <a href="https://github.com/fairpm/tsc/tree/main/faqs" rel="noopener noreferrer" target="_blank">FAIR project Frequently Asked Questions (GitHub)<span class="sr-only"> (opens in new tab)</span></a>.</p>
+
+        <p>If you have a question not covered here, please open an issue or pull request, or post in <a href="https://github.com/orgs/fairpm/discussions/categories/ideas" rel="noopener noreferrer" target="_blank">the ideas forum (GitHub)<span class="sr-only"> (opens in new tab)</span></a>.</p>
+
+        <h2>Glossary</h2>
+
+        <h3>Aggregator</h3>
+        <p>Any server which aggregates or collects package data. This can be done from Repositories and/or other Aggregators.</p>
+
+        <h3>API Replacement</h3>
+        <p>For specific features, FAIR provides replacement implementations of currently centralized vendor-specific services. Examples are update checks, browser version checks, event and news feeds.</p>
+
+        <h3>AT Protocol</h3>
+        <p>ATProto is a standard for sharing social networking services. It is developed by Bluesky Social PBC, and is used by FAIR as the basis for the package distribution protocol. <a href="https://en.wikipedia.org/wiki/AT_Protocol" rel="noopener noreferrer" target="_blank">Learn more about the AT Protocol<span class="sr-only"> (opens in new tab)</span></a>.</p>
+
+        <h3>DID</h3>
+        <p>Decentralized Identifier; a universally-unique identifier specified by the <a href="https://www.w3.org/TR/did-1.0/" rel="noopener noreferrer" target="_blank">W3C specification<span class="sr-only"> (opens in new tab)</span></a>. <a href="https://en.wikipedia.org/wiki/Decentralized_identifier" rel="noopener noreferrer" target="_blank">Decentralized identifier article at Wikipedia<span class="sr-only"> (opens in new tab)</span></a>.</p>
+
+        <p>Example of a DID in action: <a href="https://github.com/afragen/git-updater" rel="noopener noreferrer" target="_blank">Git Updater<span class="sr-only"> (opens in new tab)</span></a></p>
+
+        <p>DID registered via [...]</p>
+
+        <p>In the Git Updater plugin header:</p>
+
+        <pre><code>/**
+ * Plugin Name:       Git Updater
+ * Plugin ID:         did:plc:afjf7gsjzsqmgc7dlhb553mv
+ * ...</code></pre>
+
+        <p><code>https://plc.directory/did:plc:afjf7gsjzsqmgc7dlhb553mv</code> points to the full package information at <code>https://fair.git-updater.com/wp-json/minifair/v1/packages/did:plc:afjf7gsjzsqmgc7dlhb553mv</code></p>
+
+        <h3>FAIR</h3>
+        <p>FAIR is an acronym and stands for <strong>F</strong>ederated <strong>A</strong>nd <strong>I</strong>ndependent <strong>R</strong>epositories.</p>
+
+        <h3>FAIR Core</h3>
+        <p>The core FAIR <a href="https://github.com/fairpm/fair-protocol/blob/main/specification.md" rel="noopener noreferrer" target="_blank">protocol specification<span class="sr-only"> (opens in new tab)</span></a></p>
+
+        <h3>FAIR Distro</h3>
+        <p>A full WordPress distribution with FAIR preinstalled. Ideal for provisioning workflows. Available in the <a href="https://github.com/fairpm/fair-plugin/releases" rel="noopener noreferrer" target="_blank">release assets<span class="sr-only"> (opens in new tab)</span></a> associated with FAIR Plugin releases.</p>
+
+        <h3>FAIR Package Manager Project</h3>
+        <p>The overarching project creating a distributed system for software package releases.</p>
+
+        <h3>FAIR Plugin</h3>
+        <p><a href="https://github.com/fairpm/fair-plugin" rel="noopener noreferrer" target="_blank">A plugin<span class="sr-only"> (opens in new tab)</span></a> that configures your site to use FAIR implementations of the key services that are currently centralized on WordPress.org. Installable on any individual WordPress site, no configuration needed.</p>
+
+        <p>FAIR can be installed manually by downloading the latest zip from releases and installing it via your WordPress admin dashboard.</p>
+
+        <ul>
+          <li><a href="https://github.com/fairpm/fair-plugin/releases" rel="noopener noreferrer" target="_blank">FAIR Releases<span class="sr-only"> (opens in new tab)</span></a></li>
+          <li><a href="https://wordpress.org/documentation/article/manage-plugins/#manual-plugin-installation-1" rel="noopener noreferrer" target="_blank">How To Manually Install a Plugin<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+
+        <h3>FAIR Protocol</h3>
+        <p>The FAIR Package Management Protocol is a system for distributing installable software, the protocol outlines the core FAIR protocol specification ("FAIR Core").</p>
+
+        <ul>
+          <li><a href="https://github.com/fairpm/fair-protocol/blob/main/specification.md" rel="noopener noreferrer" target="_blank">Specification<span class="sr-only"> (opens in new tab)</span></a></li>
+          <li><a href="https://github.com/fairpm/fair-protocol/blob/main/specification.md" rel="noopener noreferrer" target="_blank">Documentation<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+
+        <h3>The FAIR Web Foundation</h3>
+        <p>A Linux Foundation directed fund, intended to provide funding for the Fair Package Manager. Formation still in process.</p>
+
+        <h3>Mini-FAIR Repo</h3>
+        <p><a href="https://github.com/fairpm/mini-fair-repo" rel="noopener noreferrer" target="_blank">A WordPress plugin<span class="sr-only"> (opens in new tab)</span></a> that transforms your site into a FAIR Repository, allowing you to serve packages directly from your own infrastructure into the FAIR system.</p>
+
+        <h3>Node</h3>
+        <p>Sometimes used to refer to a Repository, a "node" is better understood as anything connected to the FAIR network, be it an Aggregator, a Repository, or a Client/Installer like the FAIR Plugin.</p>
+
+        <h3>Package</h3>
+        <p>A package is an installable piece of software. Specifically in WordPress and in the current phase of the FAIR Package Manager Project, a package will most often be a plugin or a theme.</p>
+
+        <h3>Package binary</h3>
+        <p>An asset such as a zip file containing the binary executable code of a package.</p>
+
+        <h3>Planet</h3>
+        <p>The FAIR's Planet instance (<a href="https://www.intertwingly.net/code/venus/" rel="noopener noreferrer" target="_blank">Venus<span class="sr-only"> (opens in new tab)</span></a>) which houses the [News/Event] feed displayed in the WordPress Dashboard to FAIR plugin users by default.</p>
+
+        <h3>Repository</h3>
+        <p>A server that hosts one or more packages and their DIDs. You can set up a repository with the Mini-FAIR Repo plugin.</p>
+
+        <h3>TSC (Technical Steering Committee)</h3>
+        <p>The <em>Technical Steering Committee</em> is the organization responsible for determining the technical requirements and implementation for the FAIR package manager.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(h3) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(ul) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  .prose :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+  .prose :global(pre) {
+    background: var(--color-light-gray);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+  .prose :global(code) {
+    font-size: 0.9em;
+  }
+</style>

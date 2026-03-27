@@ -10,7 +10,7 @@ A fast, accessible, SEO-complete static site that faithfully represents the FAIR
 
 ## Current State
 
-**S01 + S02 complete.** The Astro site has a full visual design with WCAG AA accessibility. Built and verified in `src-astro/`:
+**S01 + S02 + S03 complete.** The Astro site has full visual design, WCAG AA accessibility, and all content migrated. Built and verified in `src-astro/`:
 
 - Astro 6.1.1 with static output, TypeScript strict, site URL `https://fair.pm`
 - Tailwind CSS v4 with 10 brand color tokens (green updated to #1a7f53 for AA compliance)
@@ -22,11 +22,16 @@ A fast, accessible, SEO-complete static site that faithfully represents the FAIR
 - Placeholder FAIR logo SVG and favicon (SVG + ICO)
 - Global focus-visible indicators (blue on light, white on dark backgrounds)
 - Skip-to-content link, all ARIA landmarks, prefers-reduced-motion
-- Lighthouse accessibility: 100%
-- Blog content collection schema (Zod-validated, empty — awaiting S03)
-- `astro build` exits 0, dev server responds 200
+- Lighthouse accessibility: 100% (homepage)
+- 9 blog posts as Zod-validated Markdown content collection with listing page, dynamic routing, and RSS feed
+- 15 static pages at preserved WP URLs (about, governance, get-involved, knowledge base, roadmap, rethinking-wordpress-distribution)
+- 5 blog images optimized to WebP via Astro pipeline
+- 1 MP4 video for HTML5 video element
+- YouTube/SpeakerDeck embeds with responsive wrappers
+- Content parity verified against live WP site
+- `astro build` exits 0 with 26 pages + RSS + sitemaps, dev server responds 200
 
-Next: S03 (Content Migration) or S04 (SEO & Structured Data, depends on S03).
+Next: S04 (SEO & Structured Data).
 
 ## Architecture / Key Patterns
 

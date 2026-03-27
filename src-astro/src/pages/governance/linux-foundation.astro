@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Linux Foundation — FAIR"
+  description="How the Linux Foundation supports FAIR with neutral governance, legal structure, and organizational support for open-source collaboration."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">Linux Foundation</h1>
+
+        <p>The <a href="https://www.linuxfoundation.org/" rel="noopener noreferrer" target="_blank">Linux Foundation<span class="sr-only"> (opens in new tab)</span></a> is a non-profit organization that helps people and companies work together on open-source software. It started in 2000 to support the Linux operating system, and grew quickly. Today it hosts hundreds of important projects that power much of the internet, cloud computing, mobile phones, and even cars. Instead of building products, the foundation creates a neutral space where developers and companies can collaborate on shared technologies.</p>
+
+        <p>Beyond maintaining Linux, it supports widely used projects like Kubernetes, jQuery, Node.js, and ESLint. It also provides training, certifications, and global events to help people build skills and connect with the open-source community. In short, the Linux Foundation acts as the backbone for open-source development, making sure the software we all rely on stays secure, reliable, and open to everyone.</p>
+
+        <h2>Why FAIR Chose the Linux Foundation</h2>
+
+        <p>As a home to many important open source projects, the Linux Foundation has extensive experience with supporting a variety of open source software projects and communities.</p>
+
+        <p>When exploring options for how to organize, the FAIR Package Manager project chose the Linux Foundation because of its track record with transparent governance, neutral oversight, and the support it provides to help open source projects grow.</p>
+
+        <h2>What the Linux Foundation does for FAIR — and what it doesn't.</h2>
+
+        <p>The Linux Foundation gives FAIR a legal and organizational home. It provides the framework for open, transparent governance and ensures we operate as a true collaborative project.</p>
+
+        <p>What the Linux Foundation does not do is direct the project's technical or strategic choices. Decisions about the FAIR Package Manager's direction come from our community through the governance structures we've defined. Their role is to set the guardrails, not to steer the project.</p>
+
+        <p><a href="/governance/">Our Policies &amp; Governance</a></p>
+
+        <p><a href="https://www.linuxfoundation.org" rel="noopener noreferrer" target="_blank">About the Linux Foundation<span class="sr-only"> (opens in new tab)</span></a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark-blue);
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+</style>

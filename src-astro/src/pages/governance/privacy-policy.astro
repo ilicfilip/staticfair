@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Privacy Policy — FAIR"
+  description="The FAIR Package Manager follows the Linux Foundation's Privacy Policy, ensuring compliance with applicable privacy laws and disclosures."
+>
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose">
+        <h1 class="text-dark-blue">Privacy Policy</h1>
+
+        <p>The FAIR Package Manager follows the Linux Foundation's Privacy Policy, which ensures that all project activities comply with applicable privacy laws and disclosures.</p>
+
+        <p><a href="https://lfprojects.org/policies/privacy-policy/" rel="noopener noreferrer" target="_blank">Privacy Policy at the Linux Foundation Projects<span class="sr-only"> (opens in new tab)</span></a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .prose :global(a) {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+  .prose :global(a:hover) {
+    color: var(--color-dark-blue);
+  }
+</style>
