@@ -61,7 +61,7 @@ This milestone is complete only when all are true:
 
 ## Slices
 
-- [ ] **S01: Astro Foundation & Layout System** `risk:medium` `depends:[]`
+- [x] **S01: Astro Foundation & Layout System** `risk:medium` `depends:[]`
   > After this: `astro dev` serves a working homepage at localhost with BaseLayout, Header, Footer, SEO component, Tailwind CSS, Mona Sans font, and refreshed design tokens. No content pages yet, but the full layout shell is demoable.
 
 - [ ] **S02: Design Refresh & Accessibility** `risk:medium` `depends:[S01]`

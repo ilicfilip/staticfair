@@ -10,20 +10,31 @@ A fast, accessible, SEO-complete static site that faithfully represents the FAIR
 
 ## Current State
 
-The project is in planning. Research has been completed (`Fairly static/fair-pm-astro-migration-research.md`) and a preliminary project plan exists (`PROJECT-PLAN.md`). No code has been written yet. The source content lives in two places:
-- **`fairpm/website-content` GitHub repo** — Markdown files for most static pages
-- **Live WordPress site at fair.pm** — blog posts, homepage, roadmap page, and the "rethinking WordPress distribution" page (not in the content repo)
+**S01 complete.** The Astro project foundation is built and verified in `src-astro/`. The project scaffold includes:
+
+- Astro 6.1.1 with static output, TypeScript strict, site URL `https://fair.pm`
+- Tailwind CSS v4 via `@tailwindcss/vite` with 10 brand color tokens in `@theme` directive
+- `@astrojs/sitemap` with `/packages/*` filter
+- Mona Sans variable font self-hosted (woff2, weights 200-900)
+- BaseLayout → SEO component → page props pipeline
+- Header and Footer semantic skeletons (unstyled)
+- Blog content collection schema (Zod-validated, empty — awaiting S03)
+- Homepage with real SEO props and meaningful content
+- `astro build` exits 0, dev server responds 200
+
+Next: S02 (Design Refresh & Accessibility) or S03 (Content Migration) — both depend only on S01.
 
 ## Architecture / Key Patterns
 
-- **Framework:** Astro (static output mode, TypeScript)
-- **Styling:** Tailwind CSS with custom properties for brand tokens
-- **Font:** Mona Sans (GitHub's variable font, self-hosted)
+- **Framework:** Astro 6.1.1 (static output mode, TypeScript strict)
+- **Styling:** Tailwind CSS v4 via `@tailwindcss/vite`, CSS-first config with `@theme` directive in global.css
+- **Font:** Mona Sans variable font, self-hosted, inline @font-face in BaseLayout + global.css
 - **Content:** Blog posts as Astro content collection (Markdown + Zod schema); static pages as `.astro` files
+- **SEO:** Custom SEO.astro component with typed Props; canonical URL auto-computed from Astro.site
+- **Layout:** BaseLayout.astro wraps all pages — accepts SEO props and passes through to SEO component
 - **Deployment:** Cloudflare Pages (pure static, no SSR adapter)
 - **Content workflow:** GitHub PRs → auto-deploy on merge to main
-- **Repo strategy:** Single repo for code + content (abstracted enough to split later)
-- **`/packages/*` routing:** Cloudflare origin routing rule to separate WP install
+- **Repo strategy:** Single repo for code + content, Astro project in `src-astro/` subdirectory
 
 ## Capability Contract
 

@@ -56,7 +56,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: research
 - Primary owning slice: M001/S04
 - Supporting slices: none
-- Validation: unmapped
+- Validation: partial — sitemap-index.xml generated with /packages/* filter (S01). Full validation (all pages included) deferred to S04 after S03 adds content.
 - Notes: Configure site: 'https://fair.pm' in astro.config.mjs
 
 ### R006 — URL preservation
@@ -247,7 +247,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 | R002 | core-capability | active | M001/S03 | M001/S01 | unmapped |
 | R003 | core-capability | active | M001/S03 | none | unmapped |
 | R004 | quality-attribute | active | M001/S04 | M001/S01 | unmapped |
-| R005 | quality-attribute | active | M001/S04 | none | unmapped |
+| R005 | quality-attribute | active | M001/S04 | none | partial (S01: generation + filter verified) |
 | R006 | core-capability | active | M001/S05 | none | unmapped |
 | R007 | quality-attribute | active | M001/S02 | M001/S01, M001/S04 | unmapped |
 | R008 | quality-attribute | active | M001/S03 | none | unmapped |
