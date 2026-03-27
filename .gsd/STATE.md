@@ -1,9 +1,9 @@
 # GSD State
 
 **Active Milestone:** M001 — WordPress to Astro Migration
-**Active Slice:** S02 — Design Refresh & Accessibility (COMPLETE)
-**Active Task:** S02 complete, ready for S03
-**Phase:** S02 complete — slice verification passed
+**Active Slice:** S02 complete, ready for S03
+**Active Task:** none — between slices
+**Phase:** S02 complete — slice summary and UAT written
 
 ## Progress
 - S01 complete: 3/3 tasks done ✅
@@ -12,6 +12,9 @@
   - T02: ✅ Style Header with responsive nav, hamburger menu, dropdowns
   - T03: ✅ Style Footer, homepage sections, placeholder logo/favicon
   - T04: ✅ Accessibility audit, keyboard nav verification, Lighthouse 100%
+- S03 pending: Content Migration
+- S04 pending: SEO & Structured Data (depends on S01, S03)
+- S05 pending: Deployment & Redirects (depends on S01–S04)
 
 ## Recent Decisions
 - D018: Green token `#1a7f53` replaces `#25b372` for WCAG AA compliance
@@ -23,4 +26,4 @@
 - None
 
 ## Next Action
-Reassess M001 roadmap, begin S03 (Content Pages)
+Begin S03 (Content Migration) — migrate 18 static pages and 9 blog posts

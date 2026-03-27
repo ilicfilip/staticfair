@@ -78,7 +78,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: user
 - Primary owning slice: M001/S02
 - Supporting slices: M001/S01, M001/S04
-- Validation: unmapped
+- Validation: partial — S02 validated on homepage: Lighthouse 100%, keyboard nav complete, focus indicators verified, ARIA landmarks present, skip-to-content functional, prefers-reduced-motion respected. Full site-wide validation after S03 adds content pages. VoiceOver testing recommended but not blocking.
 - Notes: Test with Lighthouse accessibility audit, axe-core, and VoiceOver on key pages
 
 ### R008 — Image optimization
@@ -100,7 +100,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: inferred
 - Primary owning slice: M001/S02
 - Supporting slices: M001/S03
-- Validation: unmapped
+- Validation: partial — S02 validated homepage responsive layout at 375px, 768px, 1280px. Header hamburger/desktop nav transition at 1024px verified. No horizontal overflow. Content page responsive behavior deferred to S03.
 - Notes: Tailwind breakpoints handle this naturally. Test header/nav, content layout, images
 
 ### R010 — Cloudflare Pages deployment
@@ -133,8 +133,8 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: user
 - Primary owning slice: M001/S02
 - Supporting slices: M001/S01
-- Validation: unmapped
-- Notes: Key contrast fix: green #25b372 on white is 3.2:1 (fails AA). Adjust to pass 4.5:1. Design tokens carried forward from current theme
+- Validation: validated — S02 delivered full visual refresh: styled header (blue bar, responsive nav), footer (dark-blue bg), homepage sections (hero, cards, features, CTA), typography system, and AA-compliant color tokens. All verified in browser.
+- Notes: Key contrast fix: green #25b372 on white is 3.2:1 (fails AA). Adjusted to #1a7f53 (4.99:1, passes AA). Design tokens carried forward from current theme
 
 ### R013 — Placeholder branding
 - Class: launchability
@@ -144,8 +144,8 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: user
 - Primary owning slice: M001/S02
 - Supporting slices: none
-- Validation: unmapped
-- Notes: Current site uses WordPress logo SVG as site logo and has no favicon (404). Placeholder must be clearly documented for future replacement
+- Validation: validated — S02 created logo.svg (FAIR text wordmark), favicon.svg (F on blue bg), favicon.ico (32×32). All wired into header and BaseLayout head. Render confirmed in browser.
+- Notes: Placeholders use <text> element (logo) and simple pixel art (favicon). Replace with path-based SVG when final branding is decided (R017)
 
 ### R014 — robots.txt
 - Class: quality-attribute
@@ -249,13 +249,13 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 | R004 | quality-attribute | active | M001/S04 | M001/S01 | unmapped |
 | R005 | quality-attribute | active | M001/S04 | none | partial (S01: generation + filter verified) |
 | R006 | core-capability | active | M001/S05 | none | unmapped |
-| R007 | quality-attribute | active | M001/S02 | M001/S01, M001/S04 | unmapped |
+| R007 | quality-attribute | active | M001/S02 | M001/S01, M001/S04 | partial (S02: homepage Lighthouse 100%, keyboard nav, focus, ARIA, skip-link) |
 | R008 | quality-attribute | active | M001/S03 | none | unmapped |
-| R009 | quality-attribute | active | M001/S02 | M001/S03 | unmapped |
+| R009 | quality-attribute | active | M001/S02 | M001/S03 | partial (S02: homepage responsive at 375/768/1280px) |
 | R010 | operability | active | M001/S05 | none | unmapped |
 | R011 | integration | active | M001/S05 | none | unmapped |
-| R012 | differentiator | active | M001/S02 | M001/S01 | unmapped |
-| R013 | launchability | active | M001/S02 | none | unmapped |
+| R012 | differentiator | active | M001/S02 | M001/S01 | validated (S02: full visual refresh verified) |
+| R013 | launchability | active | M001/S02 | none | validated (S02: logo + favicon created and wired) |
 | R014 | quality-attribute | active | M001/S05 | none | unmapped |
 | R015 | core-capability | deferred | none | none | unmapped |
 | R016 | operability | deferred | none | none | unmapped |
@@ -269,5 +269,6 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 - Active requirements: 14
 - Mapped to slices: 14
-- Validated: 0
+- Validated: 2 (R012, R013)
+- Partially validated: 3 (R005, R007, R009)
 - Unmapped active requirements: 0

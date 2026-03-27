@@ -10,19 +10,23 @@ A fast, accessible, SEO-complete static site that faithfully represents the FAIR
 
 ## Current State
 
-**S01 complete.** The Astro project foundation is built and verified in `src-astro/`. The project scaffold includes:
+**S01 + S02 complete.** The Astro site has a full visual design with WCAG AA accessibility. Built and verified in `src-astro/`:
 
 - Astro 6.1.1 with static output, TypeScript strict, site URL `https://fair.pm`
-- Tailwind CSS v4 via `@tailwindcss/vite` with 10 brand color tokens in `@theme` directive
-- `@astrojs/sitemap` with `/packages/*` filter
-- Mona Sans variable font self-hosted (woff2, weights 200-900)
-- BaseLayout → SEO component → page props pipeline
-- Header and Footer semantic skeletons (unstyled)
+- Tailwind CSS v4 with 10 brand color tokens (green updated to #1a7f53 for AA compliance)
+- Mona Sans variable font, base typography scale (body 18px/1.7, responsive heading sizes)
+- Styled header: blue background, responsive nav with CSS dropdowns, mobile hamburger with ARIA
+- Linux Foundation attribution banner above header
+- Styled footer: dark-blue background, white text, LF attribution, back-to-top link
+- Homepage: hero section, CTA cards, feature list, get-involved section
+- Placeholder FAIR logo SVG and favicon (SVG + ICO)
+- Global focus-visible indicators (blue on light, white on dark backgrounds)
+- Skip-to-content link, all ARIA landmarks, prefers-reduced-motion
+- Lighthouse accessibility: 100%
 - Blog content collection schema (Zod-validated, empty — awaiting S03)
-- Homepage with real SEO props and meaningful content
 - `astro build` exits 0, dev server responds 200
 
-Next: S02 (Design Refresh & Accessibility) or S03 (Content Migration) — both depend only on S01.
+Next: S03 (Content Migration) or S04 (SEO & Structured Data, depends on S03).
 
 ## Architecture / Key Patterns
 

@@ -64,7 +64,7 @@ This milestone is complete only when all are true:
 - [x] **S01: Astro Foundation & Layout System** `risk:medium` `depends:[]`
   > After this: `astro dev` serves a working homepage at localhost with BaseLayout, Header, Footer, SEO component, Tailwind CSS, Mona Sans font, and refreshed design tokens. No content pages yet, but the full layout shell is demoable.
 
-- [ ] **S02: Design Refresh & Accessibility** `risk:medium` `depends:[S01]`
+- [x] **S02: Design Refresh & Accessibility** `risk:medium` `depends:[S01]`
   > After this: Homepage has the full refreshed visual design with WCAG AA-compliant colors, responsive layout, placeholder logo/favicon, visible focus indicators, skip-to-content link, and keyboard-navigable header/nav. Lighthouse accessibility score ≥90 on homepage.
 
 - [ ] **S03: Content Migration** `risk:medium` `depends:[S01]`
