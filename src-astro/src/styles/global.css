@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors (from fair-parent-theme) */
+  --color-green: #25b372;
+  --color-orange: #ffaa00;
+  --color-red: #970101;
+  --color-blue: #0073aa;
+  --color-dark-blue: #003d5c;
+  --color-light-blue: #66b3d6;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-light-gray: #f6f6f7;
+  --color-dark-gray: #565757;
+
+  /* Typography */
+  --font-sans: "Mona Sans", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+    "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/monasansvf.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: URL;
+  ogImage?: string;
+  ogType?: string;
+  twitterCard?: string;
+  jsonLd?: Record<string, any>;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalURL = new URL(Astro.url.pathname, Astro.site),
+  ogImage,
+  ogType = 'website',
+  twitterCard = 'summary_large_image',
+  jsonLd,
+  noindex = false,
+} = Astro.props;
+
+const canonicalHref = canonicalURL.href;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalHref} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalHref} />
+<meta property="og:type" content={ogType} />
+{ogImage && <meta property="og:image" content={ogImage} />}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content={twitterCard} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{ogImage && <meta name="twitter:image" content={ogImage} />}
+
+<!-- Robots -->
+{noindex && <meta name="robots" content="noindex,nofollow" />}
+
+<!-- JSON-LD Structured Data -->
+{jsonLd && (
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+)}

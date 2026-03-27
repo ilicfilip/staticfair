@@ -1,0 +1,14 @@
+[
+  {
+    "id": "760b6c2f",
+    "label": "astro-dev",
+    "command": "cd src-astro && npm run dev",
+    "cwd": "/Users/tacoverdonschot/Local Sites/staticfair",
+    "startedAt": 1774616110483,
+    "processType": "server",
+    "group": null,
+    "readyPattern": null,
+    "readyPort": 4321,
+    "pid": 93397
+  }
+]
