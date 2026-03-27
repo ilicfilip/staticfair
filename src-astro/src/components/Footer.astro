@@ -1,20 +1,64 @@
 ---
 /**
- * Footer — semantic footer skeleton.
- * Structural HTML only; visual styling applied in S02.
+ * Footer — dark-blue background with white text, footer navigation,
+ * Linux Foundation attribution, and back-to-top link.
  */
 const currentYear = new Date().getFullYear();
 ---
 
-<footer>
-  <nav aria-label="Footer">
-    <ul>
-      <li><a href="/governance/privacy-policy/">Privacy Policy</a></li>
-      <li><a href="/governance/terms-of-use/">Terms of Use</a></li>
-      <li><a href="/governance/code-of-conduct/">Code of Conduct</a></li>
-    </ul>
-  </nav>
-  <p>
-    <small>&copy; {currentYear} FAIR — Federated and Independent Repositories. A Linux Foundation Project.</small>
-  </p>
+<footer class="bg-dark-blue text-white" data-focus-dark>
+  <div class="max-w-7xl mx-auto px-4 py-10">
+    <!-- Footer navigation -->
+    <nav aria-label="Footer">
+      <ul class="footer-links flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm">
+        <li><a href="/governance/privacy-policy/" class="footer-link">Privacy Policy</a></li>
+        <li><a href="/governance/terms-of-use/" class="footer-link">Terms of Use</a></li>
+        <li><a href="/governance/code-of-conduct/" class="footer-link">Code of Conduct</a></li>
+        <li><a href="/about/" class="footer-link">About FAIR</a></li>
+        <li><a href="/get-involved/" class="footer-link">Get Involved</a></li>
+      </ul>
+    </nav>
+
+    <!-- Attribution and copyright -->
+    <div class="mt-8 text-center text-sm text-white/70">
+      <p>
+        Hosted by
+        <a
+          href="https://www.linuxfoundation.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+          class="footer-link font-medium"
+        >The Linux Foundation</a>.
+      </p>
+      <p class="mt-2">
+        <small>&copy; {currentYear} FAIR — Federated and Independent Repositories. A Linux Foundation Project.</small>
+      </p>
+    </div>
+
+    <!-- Back to top -->
+    <div class="mt-6 text-center">
+      <a href="#top" class="inline-block text-sm text-white/60 hover:text-white transition-colors">
+        ↑ Back to top
+      </a>
+    </div>
+  </div>
 </footer>
+
+<style>
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-link {
+    color: rgb(255 255 255 / 0.85);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-link:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+</style>

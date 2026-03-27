@@ -1,5 +1,6 @@
 ---
 import SEO from '../components/SEO.astro';
+import LFBanner from '../components/LFBanner.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
@@ -28,7 +29,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" id="top">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,6 +43,8 @@ const {
       jsonLd={jsonLd}
       noindex={noindex}
     />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link
       rel="preload"
       href="/fonts/monasansvf.woff2"
@@ -63,6 +66,7 @@ const {
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:text-dark-blue focus:underline">
       Skip to main content
     </a>
+    <LFBanner />
     <Header />
     <main id="main-content">
       <slot />

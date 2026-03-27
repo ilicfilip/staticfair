@@ -1,54 +1,253 @@
 ---
 /**
- * Header — semantic navigation skeleton.
- * Structural HTML only; visual styling applied in S02.
+ * Header — responsive navigation with hamburger menu and dropdown sub-menus.
+ * Blue bar with white text. Hamburger visible below lg (1024px).
+ * Desktop dropdowns via CSS :hover / :focus-within. Mobile JS toggle.
  */
 ---
 
-<header>
-  <nav aria-label="Main">
-    <a href="/" aria-label="FAIR — Home">FAIR</a>
-    <ul>
-      <li>
-        <a href="/about/">About FAIR</a>
-        <ul>
-          <li><a href="/about/fairs-mandate/">FAIR's Mandate</a></li>
-          <li><a href="/about/fair-initiatives/">FAIR Initiatives</a></li>
-          <li><a href="/about/roadmap/">Roadmap</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="/packages/">Packages</a>
-        <ul>
-          <li><a href="/packages/plugins/">Plugins</a></li>
-          <li><a href="/packages/themes/">Themes</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="/governance/">Governance</a>
-        <ul>
-          <li><a href="/governance/technical-steering-committee/">Technical Steering Committee</a></li>
-          <li><a href="/governance/linux-foundation/">Linux Foundation</a></li>
-          <li><a href="/governance/code-of-conduct/">Code of Conduct</a></li>
-          <li><a href="/governance/antitrust-policy/">Antitrust Policy</a></li>
-          <li><a href="/governance/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/governance/terms-of-use/">Terms of Use</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="/blog/">Blog</a>
-      </li>
-      <li>
-        <a href="/get-involved/">Get Involved</a>
-        <ul>
-          <li><a href="https://chat.fair.pm" rel="noopener noreferrer" target="_blank">Join Slack<span class="sr-only"> (external link)</span></a></li>
-          <li><a href="https://zoom-lfx.platform.linuxfoundation.org/meetings/fair" rel="noopener noreferrer" target="_blank">Join a Meeting<span class="sr-only"> (external link)</span></a></li>
-          <li><a href="/get-involved/fair-working-groups/">FAIR Working Groups</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="/fair-knowledge-base/">Knowledge Base</a>
-      </li>
-    </ul>
-  </nav>
+<header class="bg-blue" data-focus-dark>
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo / Site name -->
+    <a href="/" class="hover:opacity-90 transition-opacity" aria-label="FAIR — Home">
+      <img src="/logo.svg" alt="FAIR" class="h-8" width="120" height="36" />
+    </a>
+
+    <!-- Hamburger button (mobile only) -->
+    <button
+      id="menu-toggle"
+      type="button"
+      class="lg:hidden ml-auto text-white p-2 -mr-2"
+      aria-expanded="false"
+      aria-controls="main-menu"
+      aria-label="Menu"
+    >
+      <!-- Hamburger icon -->
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line class="hamburger-top" x1="3" y1="6" x2="21" y2="6" />
+        <line class="hamburger-mid" x1="3" y1="12" x2="21" y2="12" />
+        <line class="hamburger-bot" x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav aria-label="Main">
+      <ul id="main-menu" class="main-menu hidden lg:flex items-center gap-1">
+        <!-- About FAIR (dropdown) -->
+        <li class="nav-group relative">
+          <a href="/about/" class="nav-link block px-3 py-2 text-white font-medium rounded hover:bg-white/15 transition-colors">
+            About FAIR
+          </a>
+          <ul class="dropdown">
+            <li><a href="/about/fairs-mandate/" class="dropdown-link">FAIR's Mandate</a></li>
+            <li><a href="/about/fair-initiatives/" class="dropdown-link">FAIR Initiatives</a></li>
+            <li><a href="/about/roadmap/" class="dropdown-link">Roadmap</a></li>
+          </ul>
+        </li>
+
+        <!-- Packages (dropdown) -->
+        <li class="nav-group relative">
+          <a href="/packages/" class="nav-link block px-3 py-2 text-white font-medium rounded hover:bg-white/15 transition-colors">
+            Packages
+          </a>
+          <ul class="dropdown">
+            <li><a href="/packages/plugins/" class="dropdown-link">Plugins</a></li>
+            <li><a href="/packages/themes/" class="dropdown-link">Themes</a></li>
+          </ul>
+        </li>
+
+        <!-- Governance (dropdown) -->
+        <li class="nav-group relative">
+          <a href="/governance/" class="nav-link block px-3 py-2 text-white font-medium rounded hover:bg-white/15 transition-colors">
+            Governance
+          </a>
+          <ul class="dropdown">
+            <li><a href="/governance/technical-steering-committee/" class="dropdown-link">Technical Steering Committee</a></li>
+            <li><a href="/governance/linux-foundation/" class="dropdown-link">Linux Foundation</a></li>
+            <li><a href="/governance/code-of-conduct/" class="dropdown-link">Code of Conduct</a></li>
+            <li><a href="/governance/antitrust-policy/" class="dropdown-link">Antitrust Policy</a></li>
+            <li><a href="/governance/privacy-policy/" class="dropdown-link">Privacy Policy</a></li>
+            <li><a href="/governance/terms-of-use/" class="dropdown-link">Terms of Use</a></li>
+          </ul>
+        </li>
+
+        <!-- Blog (no dropdown) -->
+        <li>
+          <a href="/blog/" class="nav-link block px-3 py-2 text-white font-medium rounded hover:bg-white/15 transition-colors">
+            Blog
+          </a>
+        </li>
+
+        <!-- Get Involved (dropdown) -->
+        <li class="nav-group relative">
+          <a href="/get-involved/" class="nav-link block px-3 py-2 text-white font-medium rounded hover:bg-white/15 transition-colors">
+            Get Involved
+          </a>
+          <ul class="dropdown">
+            <li><a href="https://chat.fair.pm" rel="noopener noreferrer" target="_blank" class="dropdown-link">Join Slack<span class="sr-only"> (external link)</span></a></li>
+            <li><a href="https://zoom-lfx.platform.linuxfoundation.org/meetings/fair" rel="noopener noreferrer" target="_blank" class="dropdown-link">Join a Meeting<span class="sr-only"> (external link)</span></a></li>
+            <li><a href="/get-involved/fair-working-groups/" class="dropdown-link">FAIR Working Groups</a></li>
+          </ul>
+        </li>
+
+        <!-- Knowledge Base (no dropdown) -->
+        <li>
+          <a href="/fair-knowledge-base/" class="nav-link block px-3 py-2 text-white font-medium rounded hover:bg-white/15 transition-colors">
+            Knowledge Base
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
+
+<style>
+  /* ── Desktop dropdowns ───────────────────────────── */
+  @media (min-width: 1024px) {
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 14rem;
+      background: #fff;
+      border-radius: 0.375rem;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+      padding: 0.25rem 0;
+      z-index: 20;
+      list-style: none;
+      margin: 0;
+    }
+
+    .nav-group:hover > .dropdown,
+    .nav-group:focus-within > .dropdown {
+      display: block;
+    }
+
+    .dropdown-link {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: var(--color-dark-blue);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+
+    .dropdown-link:hover {
+      background: var(--color-light-gray);
+    }
+  }
+
+  /* ── Mobile menu ─────────────────────────────────── */
+  @media (max-width: 1023px) {
+    .main-menu {
+      /* When visible (hidden class removed), display as column */
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-dark-blue);
+      padding: 0.5rem 0;
+      z-index: 30;
+      list-style: none;
+      margin: 0;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.2);
+    }
+
+    /* When menu is shown, override hidden */
+    .main-menu:not(.hidden) {
+      display: flex;
+    }
+
+    .nav-link {
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid rgb(255 255 255 / 0.1);
+    }
+
+    .dropdown {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown-link {
+      display: block;
+      padding: 0.625rem 1.25rem 0.625rem 2.25rem;
+      color: rgb(255 255 255 / 0.85);
+      font-size: 0.9375rem;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+
+    .dropdown-link:hover {
+      background: rgb(255 255 255 / 0.1);
+      color: #fff;
+    }
+  }
+
+  /* ── Shared nav resets ───────────────────────────── */
+  .main-menu,
+  .dropdown {
+    padding-left: 0;
+  }
+
+  /* Make header position relative for mobile menu absolute positioning */
+  header {
+    position: relative;
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('main-menu');
+
+  if (toggle && menu) {
+    // Toggle menu on button click
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      setMenuState(!expanded);
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setMenuState(false);
+        toggle.focus();
+      }
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (
+        toggle.getAttribute('aria-expanded') === 'true' &&
+        !menu.contains(/** @type {Node} */ (e.target)) &&
+        !toggle.contains(/** @type {Node} */ (e.target))
+      ) {
+        setMenuState(false);
+      }
+    });
+
+    // Reset on resize above 1024px
+    const mql = window.matchMedia('(min-width: 1024px)');
+    mql.addEventListener('change', (e) => {
+      if (e.matches) {
+        // Desktop: ensure menu is in default desktop state
+        menu.classList.add('hidden');
+        menu.classList.add('lg:flex');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    function setMenuState(open) {
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open) {
+        menu.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+      }
+    }
+  }
+</script>

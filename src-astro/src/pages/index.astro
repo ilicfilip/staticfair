@@ -6,26 +6,202 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="FAIR — Federated and Independent Repositories"
   description="FAIR is a Linux Foundation project building an open ecosystem of federated, independent package repositories for WordPress and beyond."
 >
-  <section class="max-w-3xl mx-auto px-4 py-16 sm:py-24">
-    <h1 class="text-4xl sm:text-5xl font-bold text-dark-blue leading-tight">
-      FAIR — Federated and Independent Repositories
-    </h1>
-    <p class="mt-6 text-lg sm:text-xl text-dark-gray leading-relaxed">
-      FAIR is a Linux Foundation project creating an open, community-governed
-      ecosystem of federated package repositories. Our mission is to ensure that
-      WordPress plugin and theme distribution remains independent, transparent,
-      and accessible to everyone.
-    </p>
-    <p class="mt-4 text-lg text-dark-gray leading-relaxed">
-      By building shared infrastructure and open standards, FAIR empowers
-      developers and repository operators to collaborate on a decentralized
-      network — free from single points of control.
-    </p>
-    <a
-      href="/about/"
-      class="mt-8 inline-block text-lg font-semibold text-green hover:underline"
-    >
-      Learn more about FAIR →
-    </a>
+  <!-- Hero section -->
+  <section class="bg-light-gray">
+    <div class="max-w-4xl mx-auto px-4 py-16 sm:py-24 text-center">
+      <h1 class="text-dark-blue">
+        Federated and Independent Repositories
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-dark-gray leading-relaxed max-w-2xl mx-auto">
+        FAIR is a Linux Foundation project creating an open, community-governed
+        ecosystem of federated package repositories. Our mission is to ensure that
+        WordPress plugin and theme distribution remains independent, transparent,
+        and accessible to everyone.
+      </p>
+      <div class="mt-8">
+        <a href="/about/" class="hero-cta">
+          Learn more about FAIR →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package explorer CTA cards -->
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <h2 class="text-center text-dark-blue">Explore Packages</h2>
+      <p class="mt-3 text-center text-dark-gray max-w-xl mx-auto">
+        Browse the open package ecosystem — plugins that extend functionality
+        and themes that shape design, all distributed through federated repositories.
+      </p>
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Plugins card -->
+        <a href="/packages/plugins/" class="cta-card group">
+          <div class="cta-card-accent bg-blue"></div>
+          <div class="p-6">
+            <h3 class="text-dark-blue group-hover:text-blue transition-colors">Plugins</h3>
+            <p class="mt-2 text-dark-gray text-base">
+              Discover plugins from independent repositories — extending WordPress
+              with features built by the open-source community.
+            </p>
+          </div>
+        </a>
+        <!-- Themes card -->
+        <a href="/packages/themes/" class="cta-card group">
+          <div class="cta-card-accent bg-green"></div>
+          <div class="p-6">
+            <h3 class="text-dark-blue group-hover:text-green transition-colors">Themes</h3>
+            <p class="mt-2 text-dark-gray text-base">
+              Find themes distributed across the federated network — designs
+              crafted for performance, accessibility, and creative freedom.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAIR is: feature list -->
+  <section class="bg-light-gray">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <h2 class="text-center text-dark-blue">FAIR is:</h2>
+      <ul class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 feature-list">
+        <li class="feature-item">
+          <span class="feature-icon" aria-hidden="true">🌐</span>
+          <div>
+            <h3 class="text-dark-blue text-lg font-bold">Federated</h3>
+            <p class="mt-1 text-dark-gray text-base">
+              No single point of control. Multiple independent repositories
+              connect through shared standards and protocols.
+            </p>
+          </div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-icon" aria-hidden="true">🔓</span>
+          <div>
+            <h3 class="text-dark-blue text-lg font-bold">Open</h3>
+            <p class="mt-1 text-dark-gray text-base">
+              Built on open-source code with transparent governance under
+              the Linux Foundation. Anyone can participate.
+            </p>
+          </div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-icon" aria-hidden="true">🤝</span>
+          <div>
+            <h3 class="text-dark-blue text-lg font-bold">Community-Governed</h3>
+            <p class="mt-1 text-dark-gray text-base">
+              Decisions are made collectively through working groups and a
+              Technical Steering Committee — not by any single vendor.
+            </p>
+          </div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-icon" aria-hidden="true">🛡️</span>
+          <div>
+            <h3 class="text-dark-blue text-lg font-bold">Independent</h3>
+            <p class="mt-1 text-dark-gray text-base">
+              Repository operators maintain autonomy over their infrastructure
+              while benefiting from shared discovery and interoperability.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-16 text-center">
+      <h2 class="text-dark-blue">Get Involved</h2>
+      <p class="mt-3 text-dark-gray max-w-xl mx-auto">
+        FAIR is built by its community. Join the conversation, contribute code,
+        or start your own federated repository.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/get-involved/" class="hero-cta">
+          Join the community →
+        </a>
+        <a
+          href="https://chat.fair.pm"
+          rel="noopener noreferrer"
+          target="_blank"
+          class="hero-cta hero-cta--outline"
+        >
+          Join Slack<span class="sr-only"> (opens in new tab)</span>
+        </a>
+      </div>
+    </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* ── Hero CTA button ─────────────────────────────── */
+  .hero-cta {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    background-color: var(--color-green);
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background-color 0.15s, box-shadow 0.15s;
+  }
+
+  .hero-cta:hover {
+    background-color: #166b46; /* slightly darker green on hover */
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+  }
+
+  .hero-cta--outline {
+    background-color: transparent;
+    color: var(--color-green);
+    border: 2px solid var(--color-green);
+  }
+
+  .hero-cta--outline:hover {
+    background-color: var(--color-green);
+    color: #fff;
+  }
+
+  /* ── CTA cards ───────────────────────────────────── */
+  .cta-card {
+    display: block;
+    background: #fff;
+    border: 1px solid rgb(0 0 0 / 0.08);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+
+  .cta-card:hover {
+    box-shadow: 0 4px 16px rgb(0 0 0 / 0.1);
+    transform: translateY(-2px);
+  }
+
+  .cta-card-accent {
+    height: 4px;
+  }
+
+  /* ── Feature list ────────────────────────────────── */
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .feature-icon {
+    flex-shrink: 0;
+    font-size: 1.75rem;
+    line-height: 1;
+    margin-top: 0.125rem;
+  }
+</style>
