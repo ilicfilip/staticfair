@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A static website for fair.pm — the FAIR (Federated and Independent Repositories) project under the Linux Foundation. The site is being migrated from WordPress to Astro, deployed on Cloudflare Pages. It consists of ~18 static content pages and a 9-post blog. The `/packages/` section (plugin/theme explorer) is excluded and will be served by a separate standalone WordPress install.
+A static website for fair.pm — the FAIR (Federated and Independent Repositories) project under the Linux Foundation. The site has been migrated from WordPress to Astro, ready for deployment on Cloudflare Pages. It consists of 18 static content pages and a 9-post blog. The `/packages/` section (plugin/theme explorer) is excluded and will be served by a separate standalone WordPress install.
 
 ## Core Value
 
@@ -10,7 +10,7 @@ A fast, accessible, SEO-complete static site that faithfully represents the FAIR
 
 ## Current State
 
-**S01 + S02 + S03 + S04 complete.** The Astro site has full visual design, WCAG AA accessibility, all content migrated, and complete SEO layer. Built and verified in `src-astro/`:
+**M001 complete — all 5 slices done.** The Astro site is fully built, styled, accessible, SEO-optimized, and deploy-ready in `src-astro/`:
 
 - Astro 6.1.1 with static output, TypeScript strict, site URL `https://fair.pm`
 - Tailwind CSS v4 with 10 brand color tokens (green updated to #1a7f53 for AA compliance)
@@ -33,9 +33,14 @@ A fast, accessible, SEO-complete static site that faithfully represents the FAIR
 - OG tags (og:site_name, og:locale, og:image with SVG fallback), Twitter Cards on every page
 - Sitemap with 26 URLs, /packages/* excluded, linked from every page
 - All meta descriptions ≤160 chars, heading hierarchy correct site-wide
+- 15 Cloudflare Pages redirect rules (9 blog URL rewrites, /feed/ → /rss.xml, WP infrastructure → /)
+- Staging X-Robots-Tag noindex headers, immutable caching for hashed assets
+- robots.txt with sitemap reference
+- GitHub Actions deploy workflow (push to main → Cloudflare Pages via wrangler-action)
+- Step-by-step Cloudflare setup guide in docs/cloudflare-setup.md
 - `astro build` exits 0 with 26 pages + RSS + sitemaps, dev server responds 200
 
-Next: S05 (Deployment & Redirects).
+**Next:** Push to GitHub, configure Cloudflare secrets, and deploy. Follow docs/cloudflare-setup.md.
 
 ## Architecture / Key Patterns
 
@@ -44,8 +49,9 @@ Next: S05 (Deployment & Redirects).
 - **Font:** Mona Sans variable font, self-hosted, inline @font-face in BaseLayout + global.css
 - **Content:** Blog posts as Astro content collection (Markdown + Zod schema); static pages as `.astro` files
 - **SEO:** Custom SEO.astro component with typed Props; canonical URL auto-computed from Astro.site
+- **Structured Data:** JSON-LD via src/utils/structured-data.ts typed helpers; buildGraph wraps in @context + @graph
 - **Layout:** BaseLayout.astro wraps all pages — accepts SEO props and passes through to SEO component
-- **Deployment:** Cloudflare Pages (pure static, no SSR adapter)
+- **Deployment:** Cloudflare Pages (pure static, no SSR adapter) via GitHub Actions + wrangler-action
 - **Content workflow:** GitHub PRs → auto-deploy on merge to main
 - **Repo strategy:** Single repo for code + content, Astro project in `src-astro/` subdirectory
 
@@ -55,4 +61,4 @@ See `.gsd/REQUIREMENTS.md` for the explicit capability contract, requirement sta
 
 ## Milestone Sequence
 
-- [ ] M001: WordPress to Astro Migration — Migrate fair.pm from WordPress to a static Astro site on Cloudflare Pages with design refresh and SEO improvements
+- [x] M001: WordPress to Astro Migration — Migrate fair.pm from WordPress to a static Astro site on Cloudflare Pages with design refresh and SEO improvements

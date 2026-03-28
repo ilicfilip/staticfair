@@ -73,7 +73,7 @@ This milestone is complete only when all are true:
 - [x] **S04: SEO & Structured Data** `risk:low` `depends:[S01,S03]`
   > After this: Every page has unique meta description, canonical URL, OG tags, Twitter Cards, and JSON-LD structured data. Sitemap generated. Structured data validates with Google Rich Results Test. Semantic HTML audited (one h1 per page, proper heading hierarchy, landmark elements).
 
-- [ ] **S05: Deployment & Redirects** `risk:medium` `depends:[S01,S02,S03,S04]`
+- [x] **S05: Deployment & Redirects** `risk:medium` `depends:[S01,S02,S03,S04]`
   > After this: Site deploys to Cloudflare Pages via GitHub Actions on push to main. All 301 redirects work (verified with curl on staging). robots.txt present. Staging has X-Robots-Tag: noindex. _headers file configures cache strategy. Step-by-step Cloudflare setup docs included. /packages/* routing instructions documented.
 
 ## Boundary Map

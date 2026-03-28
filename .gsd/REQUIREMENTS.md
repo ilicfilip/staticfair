@@ -67,8 +67,8 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: user
 - Primary owning slice: M001/S05
 - Supporting slices: none
-- Validation: unmapped
-- Notes: /packages/* URLs are excluded — they are handled by the standalone WP install. Static page URLs are preserved as-is (no redirects needed). Only blog posts change URL structure
+- Validation: validated — S05 confirmed `_redirects` contains 15 rules (all 301): 9 blog URL rewrites (date-segmented → clean), /feed/ → /rss.xml, /wp-login.php → /, /xmlrpc.php → /, /wp-admin/*, /wp-content/*, /wp-json/* → /. Static rules ordered before dynamic. All verified in build output.
+- Notes: /packages/* URLs are excluded — they are handled by the standalone WP install. Static page URLs are preserved as-is (no redirects needed). Only blog posts change URL structure. Runtime verification requires curl against deployed site.
 
 ### R007 — Accessibility (WCAG AA)
 - Class: quality-attribute
@@ -111,8 +111,8 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: user
 - Primary owning slice: M001/S05
 - Supporting slices: none
-- Validation: unmapped
-- Notes: Includes _headers file for cache strategy and staging noindex. Instructions cover: Pages project creation, custom domain, DNS config
+- Validation: validated — S05 created `.github/workflows/deploy.yml` (triggers on push to main, uses cloudflare/wrangler-action@v3, handles src-astro/ subdirectory), `_headers` with X-Robots-Tag noindex for *.pages.dev staging and cache strategy, and `docs/cloudflare-setup.md` with 9-section setup guide covering Pages project, DNS, secrets, and /packages/* routing. YAML syntax validated. All artifacts verified in build output.
+- Notes: Includes _headers file for cache strategy and staging noindex. Instructions cover: Pages project creation, custom domain, DNS config. Workflow untested against GitHub Actions — requires pushing to GitHub with configured secrets.
 
 ### R011 — /packages/* routing
 - Class: integration
@@ -122,8 +122,8 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: user
 - Primary owning slice: M001/S05
 - Supporting slices: none
-- Validation: unmapped
-- Notes: Cloudflare Origin Rules or Workers route needed. Step-by-step instructions included in deployment docs. Cannot be fully verified until both origins are live
+- Validation: partial — S05 documented Origin Rules configuration in `docs/cloudflare-setup.md` section 7, with exact dashboard steps and curl verification commands. Cannot be fully validated until both the Astro site and WP origin are live on Cloudflare. The configuration approach (Origin Rules overriding Host header for /packages/* paths) is correct per Cloudflare docs.
+- Notes: Cloudflare Origin Rules route needed. Step-by-step instructions included in deployment docs. Requires WP origin to be accessible before runtime verification is possible.
 
 ### R012 — Design refresh
 - Class: differentiator
@@ -155,7 +155,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: research
 - Primary owning slice: M001/S05
 - Supporting slices: none
-- Validation: unmapped
+- Validation: validated — S05 created `public/robots.txt` with `User-agent: *`, `Allow: /`, and `Sitemap: https://fair.pm/sitemap-index.xml`. Verified present in dist/ after build.
 - Notes: Static file in public/robots.txt
 
 ## Deferred
@@ -248,15 +248,15 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 | R003 | core-capability | active | M001/S03 | none | validated (S03: RSS 2.0 with 9 items, valid structure) |
 | R004 | quality-attribute | active | M001/S04 | M001/S01 | validated (S04: JSON-LD on 26 pages, meta descriptions ≤160, OG/Twitter/canonical on all pages) |
 | R005 | quality-attribute | active | M001/S04 | none | validated (S04: 26 URLs in sitemap, no /packages/*, linked from every page) |
-| R006 | core-capability | active | M001/S05 | none | unmapped |
+| R006 | core-capability | active | M001/S05 | none | validated (S05: 15 redirect rules in _redirects, all 301, static before dynamic) |
 | R007 | quality-attribute | active | M001/S02 | M001/S01, M001/S04 | partial (S02: homepage Lighthouse 100%, keyboard nav, focus, ARIA, skip-link; S04: heading hierarchy fixed site-wide) |
 | R008 | quality-attribute | active | M001/S03 | none | validated (S03: 5 images → WebP, responsive srcset) |
 | R009 | quality-attribute | active | M001/S02 | M001/S03 | partial (S02: homepage responsive at 375/768/1280px) |
-| R010 | operability | active | M001/S05 | none | unmapped |
-| R011 | integration | active | M001/S05 | none | unmapped |
+| R010 | operability | active | M001/S05 | none | validated (S05: deploy.yml + _headers noindex + docs/cloudflare-setup.md) |
+| R011 | integration | active | M001/S05 | none | partial (S05: Origin Rules documented with curl verification; runtime test requires live WP origin) |
 | R012 | differentiator | active | M001/S02 | M001/S01 | validated (S02: full visual refresh verified) |
 | R013 | launchability | active | M001/S02 | none | validated (S02: logo + favicon created and wired) |
-| R014 | quality-attribute | active | M001/S05 | none | unmapped |
+| R014 | quality-attribute | active | M001/S05 | none | validated (S05: robots.txt with sitemap reference in dist/) |
 | R015 | core-capability | deferred | none | none | unmapped |
 | R016 | operability | deferred | none | none | unmapped |
 | R017 | differentiator | deferred | none | none | unmapped |
@@ -269,6 +269,6 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 - Active requirements: 14
 - Mapped to slices: 14
-- Validated: 8 (R001, R002, R003, R004, R005, R008, R012, R013)
-- Partially validated: 2 (R007, R009)
+- Validated: 11 (R001, R002, R003, R004, R005, R006, R008, R010, R012, R013, R014)
+- Partially validated: 3 (R007, R009, R011)
 - Unmapped active requirements: 0
