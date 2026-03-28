@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { buildWebPage, buildBreadcrumbs, buildGraph, SITE_URL } from '../../utils/structured-data';
+
+const jsonLd = buildGraph(
+  buildWebPage({ name: 'Antitrust Policy', description: "The FAIR Package Manager follows the Linux Foundation's Antitrust Policy to ensure fair, open collaboration and compliance with competition laws.", url: `${SITE_URL}/governance/antitrust-policy/` }),
+  buildBreadcrumbs([{ name: 'Home', url: SITE_URL }, { name: 'Governance', url: `${SITE_URL}/governance/` }, { name: 'Antitrust Policy' }]),
+);
 ---
 
 <BaseLayout
   title="Antitrust Policy — FAIR"
   description="The FAIR Package Manager follows the Linux Foundation's Antitrust Policy to ensure fair, open collaboration and compliance with competition laws."
+  jsonLd={jsonLd}
 >
   <section class="bg-white">
     <div class="max-w-4xl mx-auto px-4 py-16">

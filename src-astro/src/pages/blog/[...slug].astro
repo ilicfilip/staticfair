@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+import { buildBlogPosting, buildBreadcrumbs, buildGraph, SITE_URL } from '../../utils/structured-data';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -12,6 +13,22 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const postUrl = `${SITE_URL}/blog/${post.id}/`;
+const blogPosting = buildBlogPosting({
+  title: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  author: post.data.author ?? 'FAIR',
+  url: postUrl,
+  image: post.data.image,
+});
+const breadcrumbs = buildBreadcrumbs([
+  { name: 'Home', url: SITE_URL },
+  { name: 'Blog', url: `${SITE_URL}/blog/` },
+  { name: post.data.title },
+]);
+const jsonLd = buildGraph(blogPosting, breadcrumbs);
 ---
 
 <BlogPost
@@ -21,6 +38,7 @@ const { Content } = await render(post);
   author={post.data.author}
   tags={post.data.tags}
   image={post.data.image}
+  jsonLd={jsonLd}
 >
   <Content />
 </BlogPost>

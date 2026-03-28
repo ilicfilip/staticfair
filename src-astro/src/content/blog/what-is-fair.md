@@ -1,6 +1,6 @@
 ---
 title: "What is FAIR?"
-description: "Based on Ryan McCue's presentation at LoopConf 2025 — a comprehensive look at why FAIR exists, how it works, and what it means for the future of WordPress and open source package management."
+description: "Based on Ryan McCue's LoopConf 2025 talk — why FAIR exists, how it works, and what it means for WordPress and open source package management."
 pubDate: 2025-11-04
 author: "Courtney Robertson"
 tags:

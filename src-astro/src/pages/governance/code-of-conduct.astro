@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { buildWebPage, buildBreadcrumbs, buildGraph, SITE_URL } from '../../utils/structured-data';
+
+const jsonLd = buildGraph(
+  buildWebPage({ name: 'Code of Conduct', description: "The FAIR Package Manager's Code of Conduct promotes a safe, inclusive, and professional community for all participants.", url: `${SITE_URL}/governance/code-of-conduct/` }),
+  buildBreadcrumbs([{ name: 'Home', url: SITE_URL }, { name: 'Governance', url: `${SITE_URL}/governance/` }, { name: 'Code of Conduct' }]),
+);
 ---
 
 <BaseLayout
   title="Code of Conduct — FAIR"
   description="The FAIR Package Manager's Code of Conduct promotes a safe, inclusive, and professional community for all participants."
+  jsonLd={jsonLd}
 >
   <section class="bg-white">
     <div class="max-w-4xl mx-auto px-4 py-16">

@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildWebPage, buildBreadcrumbs, buildGraph, SITE_URL } from '../utils/structured-data';
+
+const jsonLd = buildGraph(
+  buildWebPage({ name: 'Rethinking WordPress Distribution', description: 'FAIR is rethinking WordPress distribution with a decentralized, verifiable, and community-governed alternative to centralized plugin infrastructure.', url: `${SITE_URL}/rethinking-wordpress-distribution/` }),
+  buildBreadcrumbs([{ name: 'Home', url: SITE_URL }, { name: 'Rethinking WordPress Distribution' }]),
+);
 ---
 
 <BaseLayout
   title="FAIR: rethinking how WordPress software is distributed"
-  description="FAIR — Federated and Independent Repositories — is rethinking the WordPress distribution model with a decentralized, verifiable, and community-governed alternative."
+  description="FAIR is rethinking WordPress distribution with a decentralized, verifiable, and community-governed alternative to centralized plugin infrastructure."
+  jsonLd={jsonLd}
 >
   <section class="bg-white">
     <div class="max-w-4xl mx-auto px-4 py-16">
@@ -16,7 +23,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>FAIR — <strong>Federated and Independent Repositories</strong> — is rethinking the distribution model. It provides a decentralized, verifiable, and community-governed alternative that improves security, privacy, and resilience while maintaining the ease of use people expect.</p>
 
         <aside class="bg-light-gray p-6 rounded my-6">
-          <h3>Aside: what "federated" means</h3>
+          <h2>Aside: what "federated" means</h2>
 
           <p>A federated system is one made up of many independent parts that can talk to each other. Each repository or service runs on its own infrastructure but follows shared standards so they can connect and exchange information.</p>
 

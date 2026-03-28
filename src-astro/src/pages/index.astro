@@ -1,10 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildWebSite, buildOrganization, buildGraph } from '../utils/structured-data';
+
+const jsonLd = buildGraph(buildWebSite(), buildOrganization());
 ---
 
 <BaseLayout
   title="FAIR — Federated and Independent Repositories"
   description="FAIR is a Linux Foundation project building an open ecosystem of federated, independent package repositories for WordPress and beyond."
+  jsonLd={jsonLd}
 >
   <!-- Hero section -->
   <section class="bg-light-gray">

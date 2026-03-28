@@ -22,6 +22,7 @@ const {
 } = Astro.props;
 
 const canonicalHref = canonicalURL.href;
+const resolvedOgImage = ogImage || new URL('/og-default.svg', Astro.site).href;
 ---
 
 <title>{title}</title>
@@ -33,13 +34,18 @@ const canonicalHref = canonicalURL.href;
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalHref} />
 <meta property="og:type" content={ogType} />
-{ogImage && <meta property="og:image" content={ogImage} />}
+<meta property="og:site_name" content="FAIR" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content={resolvedOgImage} />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content={twitterCard} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-{ogImage && <meta name="twitter:image" content={ogImage} />}
+<meta name="twitter:image" content={resolvedOgImage} />
+
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Robots -->
 {noindex && <meta name="robots" content="noindex,nofollow" />}

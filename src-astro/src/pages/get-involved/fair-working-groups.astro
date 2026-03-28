@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { buildWebPage, buildBreadcrumbs, buildGraph, SITE_URL } from '../../utils/structured-data';
+
+const jsonLd = buildGraph(
+  buildWebPage({ name: 'FAIR Working Groups', description: "Overview of FAIR's active and archived Working Groups under the Technical Steering Committee — AspireCloud, Community, Infrastructure, and Website groups.", url: `${SITE_URL}/get-involved/fair-working-groups/` }),
+  buildBreadcrumbs([{ name: 'Home', url: SITE_URL }, { name: 'Get Involved', url: `${SITE_URL}/get-involved/` }, { name: 'Working Groups' }]),
+);
 ---
 
 <BaseLayout
   title="FAIR Working Groups — Get Involved"
-  description="Overview of FAIR's active and archived Working Groups organized under the Technical Steering Committee, including AspireCloud, Community, FAIR, Infrastructure, and Website groups."
+  description="Overview of FAIR's active and archived Working Groups under the Technical Steering Committee — AspireCloud, Community, Infrastructure, and Website groups."
+  jsonLd={jsonLd}
 >
   <section class="bg-white">
     <div class="max-w-4xl mx-auto px-4 py-16">

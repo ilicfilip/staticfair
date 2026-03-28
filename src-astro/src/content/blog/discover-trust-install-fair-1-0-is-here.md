@@ -1,6 +1,6 @@
 ---
 title: "Discover, trust, install: FAIR 1.0 is here"
-description: "Decentralised WordPress packages are here. FAIR announces its 1.0 Milestone Release, enabling site administrators to find, trust, and install packages from independent sources."
+description: "Decentralised WordPress packages are here. FAIR's 1.0 Milestone Release lets site administrators find, trust, and install packages from independent sources."
 pubDate: 2025-09-24
 author: "Courtney Robertson"
 tags:
@@ -20,7 +20,7 @@ Browse packages at [fair.pm/packages](https://fair.pm/packages), or directly fro
 
 Results are powered by **AspireCloud**, which combines WordPress.org plugins with FAIR-registered independent sources. When you choose a FAIR-registered plugin, its cryptographic signature is checked before installation, and updates from these sources work as smoothly as updates for official WordPress plugins.
 
-# New in this release
+## New in this release
 
 As this release combines progress across many different parts of the FAIR project, we'll include the main changes for each of its projects.
 
@@ -64,7 +64,7 @@ Planet FAIR is the component that serves the news in the FAIR ecosystem. It is a
 
 ![Zoomed screenshot of Planet FAIR showing a feed of recent WordPress community posts with titles, source names, and dates.](../../assets/images/blog/planet-zoomed.png)
 
-# Why FAIR 1.0 matters
+## Why FAIR 1.0 matters
 
 FAIR 1.0 is the first time the full stack works together. For users, this means you can now discover and install plugins from outside the WordPress.org ecosystem without needing to modify your workflow. For developers and publishers, it offers a real, working path to distribute trusted software independently, using open standards and shared infrastructure.
 
@@ -76,7 +76,7 @@ With cryptographic signing, DNS-based identity, open metadata, and support for c
 
 Most importantly, it shows that FAIR is not just a proposal or a protocol. It is a working ecosystem, and it is ready for others to build on.
 
-# Acknowledgements
+## Acknowledgements
 
 Thank you to everyone who contributed to FAIR 1.0!
 
@@ -84,7 +84,7 @@ Andrew Norcross, Andy Fragen, Anonymous, Austin, Benjamin Sternthal, Brent Toder
 
 *If your name is missing here, please let us know either [on GitHub](https://github.com/fairpm/website-content/issues) or in the [FAIR Chat](https://chat.fair.pm)!*
 
-# Try FAIR 1.0 today
+## Try FAIR 1.0 today
 
 Ready to explore FAIR?
 

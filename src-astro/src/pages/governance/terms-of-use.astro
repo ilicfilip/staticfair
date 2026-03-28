@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { buildWebPage, buildBreadcrumbs, buildGraph, SITE_URL } from '../../utils/structured-data';
+
+const jsonLd = buildGraph(
+  buildWebPage({ name: 'Terms of Use', description: "The FAIR Package Manager follows the Linux Foundation's Terms of Use, setting standardized expectations for use of resources.", url: `${SITE_URL}/governance/terms-of-use/` }),
+  buildBreadcrumbs([{ name: 'Home', url: SITE_URL }, { name: 'Governance', url: `${SITE_URL}/governance/` }, { name: 'Terms of Use' }]),
+);
 ---
 
 <BaseLayout
   title="Terms of Use — FAIR"
   description="The FAIR Package Manager follows the Linux Foundation's Terms of Use, setting standardized expectations for use of resources."
+  jsonLd={jsonLd}
 >
   <section class="bg-white">
     <div class="max-w-4xl mx-auto px-4 py-16">

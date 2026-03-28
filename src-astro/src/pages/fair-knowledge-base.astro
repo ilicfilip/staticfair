@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildWebPage, buildBreadcrumbs, buildGraph, SITE_URL } from '../utils/structured-data';
+
+const jsonLd = buildGraph(
+  buildWebPage({ name: 'Knowledge Base', description: 'Frequently asked questions, glossary, and reference information about the FAIR Package Manager project, its architecture, and key concepts.', url: `${SITE_URL}/fair-knowledge-base/` }),
+  buildBreadcrumbs([{ name: 'Home', url: SITE_URL }, { name: 'Knowledge Base' }]),
+);
 ---
 
 <BaseLayout
   title="FAIR Knowledge Base — Federated and Independent Repositories"
   description="Frequently asked questions, glossary, and reference information about the FAIR Package Manager project, its architecture, and key concepts."
+  jsonLd={jsonLd}
 >
   <section class="bg-white">
     <div class="max-w-4xl mx-auto px-4 py-16">

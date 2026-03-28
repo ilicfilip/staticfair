@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { buildWebPage, buildBreadcrumbs, buildGraph, SITE_URL } from '../../utils/structured-data';
+
+const jsonLd = buildGraph(
+  buildWebPage({ name: 'Roadmap', description: "FAIR's 2026 roadmap covering three annual milestones: Trust Systems, Expanding Federation, and Increased Resilience & Efficiency.", url: `${SITE_URL}/about/roadmap/` }),
+  buildBreadcrumbs([{ name: 'Home', url: SITE_URL }, { name: 'About', url: `${SITE_URL}/about/` }, { name: 'Roadmap' }]),
+);
 ---
 
 <BaseLayout
   title="Roadmap — FAIR"
   description="FAIR's 2026 roadmap covering three annual milestones: Trust Systems, Expanding Federation, and Increased Resilience & Efficiency."
+  jsonLd={jsonLd}
 >
   <section class="bg-white">
     <div class="max-w-4xl mx-auto px-4 py-16">

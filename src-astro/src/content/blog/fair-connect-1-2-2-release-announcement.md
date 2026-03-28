@@ -26,7 +26,7 @@ If you previously updated to 1.2.1, you will need to perform this update manuall
 wp plugin deactivate fair-plugin && wp plugin install --activate --force https://github.com/fairpm/fair-plugin/releases/download/1.2.2/fair-plugin-1.2.2.zip
 ```
 
-# Try FAIR Connect Today
+## Try FAIR Connect Today
 
 Ready to explore FAIR?
 

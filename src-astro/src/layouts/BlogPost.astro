@@ -8,9 +8,10 @@ interface Props {
   author?: string;
   tags?: string[];
   image?: string;
+  jsonLd?: Record<string, any>;
 }
 
-const { title, description, pubDate, author, tags, image } = Astro.props;
+const { title, description, pubDate, author, tags, image, jsonLd } = Astro.props;
 
 const formattedDate = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -24,6 +25,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
   description={description}
   ogType="article"
   ogImage={image}
+  jsonLd={jsonLd}
 >
   <article class="max-w-3xl mx-auto px-4 py-12 sm:py-16">
     <header class="mb-8 border-b border-light-gray pb-8">

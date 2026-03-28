@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { buildWebPage, buildBreadcrumbs, buildGraph, SITE_URL } from '../../utils/structured-data';
+
+const jsonLd = buildGraph(
+  buildWebPage({ name: 'Privacy Policy', description: "The FAIR Package Manager follows the Linux Foundation's Privacy Policy, ensuring compliance with applicable privacy laws and disclosures.", url: `${SITE_URL}/governance/privacy-policy/` }),
+  buildBreadcrumbs([{ name: 'Home', url: SITE_URL }, { name: 'Governance', url: `${SITE_URL}/governance/` }, { name: 'Privacy Policy' }]),
+);
 ---
 
 <BaseLayout
   title="Privacy Policy — FAIR"
   description="The FAIR Package Manager follows the Linux Foundation's Privacy Policy, ensuring compliance with applicable privacy laws and disclosures."
+  jsonLd={jsonLd}
 >
   <section class="bg-white">
     <div class="max-w-4xl mx-auto px-4 py-16">

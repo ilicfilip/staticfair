@@ -1,6 +1,6 @@
 ---
 title: "2025 FAIR Recap"
-description: "From founding under the Linux Foundation to a suite of nine software products — a look back at FAIR's first year of establishing, extending, engaging, and envisioning the future."
+description: "From founding under the Linux Foundation to nine software products — a look back at FAIR's first year of establishing, extending, engaging, and envisioning."
 pubDate: 2026-01-25
 author: "Brent Toderash"
 tags:

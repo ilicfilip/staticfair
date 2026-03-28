@@ -70,7 +70,7 @@ This milestone is complete only when all are true:
 - [x] **S03: Content Migration** `risk:medium` `depends:[S01]`
   > After this: All 18 static pages and 9 blog posts render with correct content. Blog listing page shows posts sorted by date. RSS feed at /rss.xml validates. Images optimized via Astro Image component. Content parity verified against live WP site.
 
-- [ ] **S04: SEO & Structured Data** `risk:low` `depends:[S01,S03]`
+- [x] **S04: SEO & Structured Data** `risk:low` `depends:[S01,S03]`
   > After this: Every page has unique meta description, canonical URL, OG tags, Twitter Cards, and JSON-LD structured data. Sitemap generated. Structured data validates with Google Rich Results Test. Semantic HTML audited (one h1 per page, proper heading hierarchy, landmark elements).
 
 - [ ] **S05: Deployment & Redirects** `risk:medium` `depends:[S01,S02,S03,S04]`

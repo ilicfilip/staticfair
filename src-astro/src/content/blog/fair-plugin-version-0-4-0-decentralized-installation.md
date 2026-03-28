@@ -11,7 +11,7 @@ Say hello to the Fair plugin 0.4.0! With version 0.4.0 you can install a plugin 
 
 This is a big step towards decentralized package management and puts us firmly on the road towards 1.0 and a plugin directory which has no reliance on centralized infrastructure. Our roadmap for 1.0 includes the listing and search functionality to fully replace the existing plugins list.
 
-### Try out 0.4.0
+## Try out 0.4.0
 
 You can try out the decentralized functionality with a test plugin ID: `did:plc:deoui6ztyx6paqajconl67rz`
 

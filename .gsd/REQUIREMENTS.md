@@ -45,7 +45,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: research
 - Primary owning slice: M001/S04
 - Supporting slices: M001/S01
-- Validation: unmapped
+- Validation: validated — S04 confirmed all 26 pages have JSON-LD structured data (WebSite+Organization on homepage, BlogPosting+BreadcrumbList on blog posts, WebPage+BreadcrumbList on static pages), unique meta descriptions ≤160 chars, canonical URLs, OG tags (including og:site_name, og:locale, og:image), and Twitter Card tags. 14 automated checks pass. JSON-LD structural validity confirmed via parsing on 3 sample pages.
 - Notes: Structured data types: WebSite (homepage), Organization, BlogPosting, BreadcrumbList, WebPage. Drop SearchAction unless Pagefind is added later
 
 ### R005 — Sitemap
@@ -56,7 +56,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: research
 - Primary owning slice: M001/S04
 - Supporting slices: none
-- Validation: partial — sitemap-index.xml generated with /packages/* filter (S01). Full validation (all pages included) deferred to S04 after S03 adds content.
+- Validation: validated — S04 confirmed sitemap-0.xml contains exactly 26 URLs matching all built pages. No /packages/* entries present. Sitemap linked from every page via `<link rel="sitemap" href="/sitemap-index.xml">`.
 - Notes: Configure site: 'https://fair.pm' in astro.config.mjs
 
 ### R006 — URL preservation
@@ -78,7 +78,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 - Source: user
 - Primary owning slice: M001/S02
 - Supporting slices: M001/S01, M001/S04
-- Validation: partial — S02 validated on homepage: Lighthouse 100%, keyboard nav complete, focus indicators verified, ARIA landmarks present, skip-to-content functional, prefers-reduced-motion respected. Full site-wide validation after S03 adds content pages. VoiceOver testing recommended but not blocking.
+- Validation: partial — S02 validated on homepage: Lighthouse 100%, keyboard nav complete, focus indicators verified, ARIA landmarks present, skip-to-content functional, prefers-reduced-motion respected. S04 fixed heading hierarchy across all blog posts and static pages (no content h1 tags, no level skips). VoiceOver testing recommended but not blocking.
 - Notes: Test with Lighthouse accessibility audit, axe-core, and VoiceOver on key pages
 
 ### R008 — Image optimization
@@ -246,10 +246,10 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 | R001 | core-capability | active | M001/S03 | M001/S01, M001/S04 | validated (S03: 18 pages at preserved URLs, content parity spot-checked) |
 | R002 | core-capability | active | M001/S03 | M001/S01 | validated (S03: 9 posts, Zod schema, listing, dynamic route) |
 | R003 | core-capability | active | M001/S03 | none | validated (S03: RSS 2.0 with 9 items, valid structure) |
-| R004 | quality-attribute | active | M001/S04 | M001/S01 | unmapped |
-| R005 | quality-attribute | active | M001/S04 | none | partial (S01: generation + filter verified) |
+| R004 | quality-attribute | active | M001/S04 | M001/S01 | validated (S04: JSON-LD on 26 pages, meta descriptions ≤160, OG/Twitter/canonical on all pages) |
+| R005 | quality-attribute | active | M001/S04 | none | validated (S04: 26 URLs in sitemap, no /packages/*, linked from every page) |
 | R006 | core-capability | active | M001/S05 | none | unmapped |
-| R007 | quality-attribute | active | M001/S02 | M001/S01, M001/S04 | partial (S02: homepage Lighthouse 100%, keyboard nav, focus, ARIA, skip-link) |
+| R007 | quality-attribute | active | M001/S02 | M001/S01, M001/S04 | partial (S02: homepage Lighthouse 100%, keyboard nav, focus, ARIA, skip-link; S04: heading hierarchy fixed site-wide) |
 | R008 | quality-attribute | active | M001/S03 | none | validated (S03: 5 images → WebP, responsive srcset) |
 | R009 | quality-attribute | active | M001/S02 | M001/S03 | partial (S02: homepage responsive at 375/768/1280px) |
 | R010 | operability | active | M001/S05 | none | unmapped |
@@ -269,6 +269,6 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 - Active requirements: 14
 - Mapped to slices: 14
-- Validated: 6 (R001, R002, R003, R008, R012, R013)
-- Partially validated: 3 (R005, R007, R009)
+- Validated: 8 (R001, R002, R003, R004, R005, R008, R012, R013)
+- Partially validated: 2 (R007, R009)
 - Unmapped active requirements: 0

@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { buildWebPage, buildBreadcrumbs, buildGraph, SITE_URL } from '../../utils/structured-data';
+
+const jsonLd = buildGraph(
+  buildWebPage({ name: 'Policy & Governance', description: 'How FAIR is governed: organizational structure, decision-making process, and the separation of technical and non-technical responsibilities.', url: `${SITE_URL}/governance/` }),
+  buildBreadcrumbs([{ name: 'Home', url: SITE_URL }, { name: 'Governance' }]),
+);
 ---
 
 <BaseLayout
   title="Policy & Governance — FAIR"
   description="How FAIR is governed: organizational structure, decision-making process, and the separation of technical and non-technical responsibilities."
+  jsonLd={jsonLd}
 >
   <section class="bg-white">
     <div class="max-w-4xl mx-auto px-4 py-16">

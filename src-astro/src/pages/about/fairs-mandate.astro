@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { buildWebPage, buildBreadcrumbs, buildGraph, SITE_URL } from '../../utils/structured-data';
+
+const jsonLd = buildGraph(
+  buildWebPage({ name: "FAIR's Mandate", description: 'Why FAIR exists: decentralizing software distribution to increase resilience, empower communities, and preserve choice and control.', url: `${SITE_URL}/about/fairs-mandate/` }),
+  buildBreadcrumbs([{ name: 'Home', url: SITE_URL }, { name: 'About', url: `${SITE_URL}/about/` }, { name: "FAIR's Mandate" }]),
+);
 ---
 
 <BaseLayout
   title="FAIR's Mandate — Federated and Independent Repositories"
   description="Why FAIR exists: decentralizing software distribution to increase resilience, empower communities, and preserve choice and control."
+  jsonLd={jsonLd}
 >
   <section class="bg-white">
     <div class="max-w-4xl mx-auto px-4 py-16">

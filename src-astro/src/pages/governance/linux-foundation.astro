@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { buildWebPage, buildBreadcrumbs, buildGraph, SITE_URL } from '../../utils/structured-data';
+
+const jsonLd = buildGraph(
+  buildWebPage({ name: 'Linux Foundation', description: 'How the Linux Foundation supports FAIR with neutral governance, legal structure, and organizational support for open-source collaboration.', url: `${SITE_URL}/governance/linux-foundation/` }),
+  buildBreadcrumbs([{ name: 'Home', url: SITE_URL }, { name: 'Governance', url: `${SITE_URL}/governance/` }, { name: 'Linux Foundation' }]),
+);
 ---
 
 <BaseLayout
   title="Linux Foundation — FAIR"
   description="How the Linux Foundation supports FAIR with neutral governance, legal structure, and organizational support for open-source collaboration."
+  jsonLd={jsonLd}
 >
   <section class="bg-white">
     <div class="max-w-4xl mx-auto px-4 py-16">

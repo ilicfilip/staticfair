@@ -1,6 +1,6 @@
 ---
 title: "FAIR Connect 1.2.1 Release Announcement"
-description: "Version 1.2.1 of FAIR Connect is a fast follow-up to version 1.2, incorporating key bug fixes and minor feature additions including hashed package directory names."
+description: "Version 1.2.1 of FAIR Connect is a fast follow-up to version 1.2, with key bug fixes and minor feature additions including hashed package directory names."
 pubDate: 2025-12-22
 author: "Joe Dolson"
 tags:
