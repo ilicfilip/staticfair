@@ -6,7 +6,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ### R001 — Static page migration
 - Class: core-capability
-- Status: active
+- Status: validated
 - Description: All 18 static pages render with correct content, preserved URLs, and semantic HTML
 - Why it matters: Content parity is the baseline — any missing or broken page is a regression from the WordPress site
 - Source: user
@@ -17,7 +17,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ### R002 — Blog content collection
 - Class: core-capability
-- Status: active
+- Status: validated
 - Description: 9 blog posts managed as typed Markdown content collection with Zod-validated schema, listing page, and individual post pages
 - Why it matters: Blog is the primary dynamic content type — schema validation prevents silent breakage when adding new posts
 - Source: user
@@ -28,7 +28,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ### R003 — RSS feed
 - Class: core-capability
-- Status: active
+- Status: validated
 - Description: Valid RSS 2.0 feed at /rss.xml generated from the blog content collection
 - Why it matters: Existing feed at /feed/ has subscribers; must preserve with redirect
 - Source: inferred
@@ -39,7 +39,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ### R004 — SEO completeness
 - Class: quality-attribute
-- Status: active
+- Status: validated
 - Description: Every page has: unique meta description (120-160 chars), canonical URL, OG tags, Twitter Card tags, and appropriate JSON-LD structured data
 - Why it matters: Current site is missing meta descriptions, Twitter Cards, canonical URLs, robots.txt, and sitemap — this is the primary SEO improvement opportunity
 - Source: research
@@ -50,7 +50,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ### R005 — Sitemap
 - Class: quality-attribute
-- Status: active
+- Status: validated
 - Description: Auto-generated sitemap at /sitemap-index.xml via @astrojs/sitemap, excluding /packages/* paths
 - Why it matters: Current site has no sitemap (404). This is a critical SEO fix
 - Source: research
@@ -61,7 +61,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ### R006 — URL preservation
 - Class: core-capability
-- Status: active
+- Status: validated
 - Description: All existing non-packages URLs either preserved at their current path or 301-redirected. Includes: 9 blog post URL rewrites (drop date segments), WordPress infrastructure URLs (/wp-admin/*, /wp-login.php, /wp-content/*, /wp-json/*, /xmlrpc.php → /), and /feed/ → /rss.xml
 - Why it matters: Broken URLs cause SEO ranking loss and broken bookmarks/links from external sites
 - Source: user
@@ -83,7 +83,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ### R008 — Image optimization
 - Class: quality-attribute
-- Status: active
+- Status: validated
 - Description: All images served through Astro's Image component with automatic WebP/AVIF conversion, responsive srcset, width/height attributes, lazy loading, and required alt text
 - Why it matters: Images are the biggest performance bottleneck on the current site. Astro's Image component prevents CLS and reduces payload
 - Source: research
@@ -105,7 +105,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ### R010 — Cloudflare Pages deployment
 - Class: operability
-- Status: active
+- Status: validated
 - Description: CI/CD pipeline via GitHub Actions, auto-deploy on push to main, staging environment on *.pages.dev with X-Robots-Tag: noindex, step-by-step Cloudflare setup instructions included
 - Why it matters: User needs full Cloudflare configuration guidance including DNS, Pages project, and routing rules
 - Source: user
@@ -127,7 +127,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ### R012 — Design refresh
 - Class: differentiator
-- Status: active
+- Status: validated
 - Description: Light visual refresh using existing brand color palette (with contrast fixes), Mona Sans font, Tailwind CSS, modernized typography and spacing. Not a full redesign — preserve brand identity
 - Why it matters: Opportunity to modernize while migrating, with accessibility improvements baked in
 - Source: user
@@ -138,7 +138,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ### R013 — Placeholder branding
 - Class: launchability
-- Status: active
+- Status: validated
 - Description: Clean text-based FAIR wordmark and generated favicon, designed as placeholders for easy replacement when final branding is decided
 - Why it matters: Site needs a logo and favicon to launch, but real branding hasn't been decided yet
 - Source: user
@@ -149,7 +149,7 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ### R014 — robots.txt
 - Class: quality-attribute
-- Status: active
+- Status: validated
 - Description: robots.txt present at site root with sitemap reference, all crawlers including AI crawlers allowed
 - Why it matters: Current site returns 404 for robots.txt. Fixing this improves discoverability
 - Source: research
@@ -243,20 +243,20 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 | ID | Class | Status | Primary owner | Supporting | Proof |
 |---|---|---|---|---|---|
-| R001 | core-capability | active | M001/S03 | M001/S01, M001/S04 | validated (S03: 18 pages at preserved URLs, content parity spot-checked) |
-| R002 | core-capability | active | M001/S03 | M001/S01 | validated (S03: 9 posts, Zod schema, listing, dynamic route) |
-| R003 | core-capability | active | M001/S03 | none | validated (S03: RSS 2.0 with 9 items, valid structure) |
-| R004 | quality-attribute | active | M001/S04 | M001/S01 | validated (S04: JSON-LD on 26 pages, meta descriptions ≤160, OG/Twitter/canonical on all pages) |
-| R005 | quality-attribute | active | M001/S04 | none | validated (S04: 26 URLs in sitemap, no /packages/*, linked from every page) |
-| R006 | core-capability | active | M001/S05 | none | validated (S05: 15 redirect rules in _redirects, all 301, static before dynamic) |
+| R001 | core-capability | validated | M001/S03 | M001/S01, M001/S04 | validated (S03: 18 pages at preserved URLs, content parity spot-checked) |
+| R002 | core-capability | validated | M001/S03 | M001/S01 | validated (S03: 9 posts, Zod schema, listing, dynamic route) |
+| R003 | core-capability | validated | M001/S03 | none | validated (S03: RSS 2.0 with 9 items, valid structure) |
+| R004 | quality-attribute | validated | M001/S04 | M001/S01 | validated (S04: JSON-LD on 26 pages, meta descriptions ≤160, OG/Twitter/canonical on all pages) |
+| R005 | quality-attribute | validated | M001/S04 | none | validated (S04: 26 URLs in sitemap, no /packages/*, linked from every page) |
+| R006 | core-capability | validated | M001/S05 | none | validated (S05: 15 redirect rules in _redirects, all 301, static before dynamic) |
 | R007 | quality-attribute | active | M001/S02 | M001/S01, M001/S04 | partial (S02: homepage Lighthouse 100%, keyboard nav, focus, ARIA, skip-link; S04: heading hierarchy fixed site-wide) |
-| R008 | quality-attribute | active | M001/S03 | none | validated (S03: 5 images → WebP, responsive srcset) |
+| R008 | quality-attribute | validated | M001/S03 | none | validated (S03: 5 images → WebP, responsive srcset) |
 | R009 | quality-attribute | active | M001/S02 | M001/S03 | partial (S02: homepage responsive at 375/768/1280px) |
-| R010 | operability | active | M001/S05 | none | validated (S05: deploy.yml + _headers noindex + docs/cloudflare-setup.md) |
+| R010 | operability | validated | M001/S05 | none | validated (S05: deploy.yml + _headers noindex + docs/cloudflare-setup.md) |
 | R011 | integration | active | M001/S05 | none | partial (S05: Origin Rules documented with curl verification; runtime test requires live WP origin) |
-| R012 | differentiator | active | M001/S02 | M001/S01 | validated (S02: full visual refresh verified) |
-| R013 | launchability | active | M001/S02 | none | validated (S02: logo + favicon created and wired) |
-| R014 | quality-attribute | active | M001/S05 | none | validated (S05: robots.txt with sitemap reference in dist/) |
+| R012 | differentiator | validated | M001/S02 | M001/S01 | validated (S02: full visual refresh verified) |
+| R013 | launchability | validated | M001/S02 | none | validated (S02: logo + favicon created and wired) |
+| R014 | quality-attribute | validated | M001/S05 | none | validated (S05: robots.txt with sitemap reference in dist/) |
 | R015 | core-capability | deferred | none | none | unmapped |
 | R016 | operability | deferred | none | none | unmapped |
 | R017 | differentiator | deferred | none | none | unmapped |
@@ -267,8 +267,9 @@ This file is the explicit capability and coverage contract for the fair.pm stati
 
 ## Coverage Summary
 
-- Active requirements: 14
-- Mapped to slices: 14
+- Total active+validated requirements: 14
 - Validated: 11 (R001, R002, R003, R004, R005, R006, R008, R010, R012, R013, R014)
-- Partially validated: 3 (R007, R009, R011)
+- Active (partially validated): 3 (R007, R009, R011)
+- Deferred: 4 (R015, R016, R017, R018)
+- Out of scope: 3 (R019, R020, R021)
 - Unmapped active requirements: 0

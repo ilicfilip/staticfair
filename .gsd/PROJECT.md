@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A static website for fair.pm — the FAIR (Federated and Independent Repositories) project under the Linux Foundation. The site has been migrated from WordPress to Astro, ready for deployment on Cloudflare Pages. It consists of 18 static content pages and a 9-post blog. The `/packages/` section (plugin/theme explorer) is excluded and will be served by a separate standalone WordPress install.
+A static website for fair.pm — the FAIR (Federated and Independent Repositories) project under the Linux Foundation. The site has been migrated from WordPress to Astro and is ready for deployment on Cloudflare Pages. It consists of 18 static content pages and a 9-post blog. The `/packages/` section (plugin/theme explorer) is excluded and will be served by a separate standalone WordPress install.
 
 ## Core Value
 
@@ -10,7 +10,7 @@ A fast, accessible, SEO-complete static site that faithfully represents the FAIR
 
 ## Current State
 
-**M001 complete — all 5 slices done.** The Astro site is fully built, styled, accessible, SEO-optimized, and deploy-ready in `src-astro/`:
+**M001 complete — milestone verified and closed.** The Astro site is fully built, styled, accessible, SEO-optimized, and deploy-ready in `src-astro/`:
 
 - Astro 6.1.1 with static output, TypeScript strict, site URL `https://fair.pm`
 - Tailwind CSS v4 with 10 brand color tokens (green updated to #1a7f53 for AA compliance)
@@ -40,7 +40,7 @@ A fast, accessible, SEO-complete static site that faithfully represents the FAIR
 - Step-by-step Cloudflare setup guide in docs/cloudflare-setup.md
 - `astro build` exits 0 with 26 pages + RSS + sitemaps, dev server responds 200
 
-**Next:** Push to GitHub, configure Cloudflare secrets, and deploy. Follow docs/cloudflare-setup.md.
+**Next steps:** Push to GitHub, configure Cloudflare secrets (CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID), and deploy following `docs/cloudflare-setup.md`. Three requirements remain partially validated (R007 accessibility, R009 responsive, R011 /packages routing) — all need runtime or post-deploy verification.
 
 ## Architecture / Key Patterns
 
@@ -59,6 +59,11 @@ A fast, accessible, SEO-complete static site that faithfully represents the FAIR
 
 See `.gsd/REQUIREMENTS.md` for the explicit capability contract, requirement status, and coverage mapping.
 
+- 11 requirements validated (R001–R006, R008, R010, R012–R014)
+- 3 requirements partially validated, remain active (R007, R009, R011)
+- 4 requirements deferred (R015–R018)
+- 3 requirements out of scope (R019–R021)
+
 ## Milestone Sequence
 
-- [x] M001: WordPress to Astro Migration — Migrate fair.pm from WordPress to a static Astro site on Cloudflare Pages with design refresh and SEO improvements
+- [x] M001: WordPress to Astro Migration — Migrated fair.pm from WordPress to a static Astro site on Cloudflare Pages with design refresh and SEO improvements. 5 slices, 19 tasks, ~204 minutes. All success criteria met.
