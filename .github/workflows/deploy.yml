@@ -10,6 +10,9 @@ jobs:
     permissions:
       contents: read
       deployments: write
+    defaults:
+      run:
+        working-directory: src-astro
     steps:
       - uses: actions/checkout@v4
 
@@ -34,14 +37,13 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=${{ github.event.repository.name }}
+          command: pages deploy src-astro/dist --project-name=${{ github.event.repository.name }}
 
       - name: Save site URL as deployment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
         run: |
-          # Extract production URL from per-commit URL (e.g. abc123.my-site.pages.dev -> my-site.pages.dev)
           SITE_URL=$(echo "$DEPLOY_URL" | sed 's|https://[a-f0-9]*\.||')
           if [ -z "$SITE_URL" ]; then exit 0; fi
           SITE_URL="https://$SITE_URL"
