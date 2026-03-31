@@ -20,7 +20,7 @@ You can try out the decentralized functionality with a test plugin ID: `did:plc:
 
 Or see it in action in this video:
 
-             Your browser does not support the video element.    
+Your browser does not support the video element.
 
 Also in this release:
 

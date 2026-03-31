@@ -16,10 +16,6 @@ From discussions early in 2025, FAIR was founded under the [Linux Foundation](ht
 
 Early 2025 involved adopting a governance model, setting objectives, and engaging with the Linux Foundation for oversight and support. In addition to drafting the FAIR Protocol, we prepared the **FAIR Connect** plugin for release at this event as a proof of concept for technical independence. Working closely with AspirePress, the plugin connects to AspireCloud for software updates.
 
-    
-
-    
-
 The announcement was very well-received, with media coverage beyond the WordPress community to the broader tech industry. In the WordPress space, media coverage came from [*The Repository*](https://www.therepository.email/fair-to-decentralize-wordpress-backed-by-linux-foundation-and-contributors), with [a followup on AspirePress](https://www.therepository.email/aspirepress-the-quiet-project-powering-fairs-infrastructure), as well as [*WP-Content.co*](https://wp-content.co/fair-project-linux-foundation-decentralize-wordpress/) and other WordPress news sites as well as blogs and opinion pieces. In the wider tech media, it was covered by outlets like [*Fast Company*](https://www.fastcompany.com/91347003/wordpress-veterans-launch-fair-project-to-tackle-security-and-control-concerns), [*The Register*](https://www.theregister.com/2025/06/06/linux_foundation_wordpress_peacemaker/), [*Search Engine Journal*](https://www.searchenginejournal.com/wordpress-co-founder-mullenwegs-reaction-to-fair-project/548616/), [*Web Hosting Today*](https://webhosting.today/2025/06/07/linux-foundation-launches-fair-project/), [*Silicon Republic*](https://www.siliconrepublic.com/business/wordpress-linux-veterans-restore-trust-fair-project), [*Undercode News*](https://undercodenews.com/fair-package-manager-a-new-era-for-wordpress-plugins-amid-legal-turmoil/), [*Techspot*](https://www.techspot.com/news/108233-linux-foundation-steps-neutral-solution-wordpress-crisis.html), [*Linux Security*](https://linuxsecurity.com/news/security-projects/fair-package-manager-wordpress-stability), [*CMS Critic*](https://cmscritic.com/alls-fair-in-love-and-war-new-fair-package-manager-aims-to-bring-peace-to-the-wordpress-ecosystem), and others.
 
 ### What They’re Saying
@@ -35,8 +31,6 @@ The announcement was very well-received, with media coverage beyond the WordPres
 > Help[s] to strengthen the software supply chain through greater transparency. — Robin Bender Ginn, OpenJS Foundation
 
 Closer to home, the release was reported by FAIR’s own [Joost de Valk](https://joost.blog/path-forward-for-wordpress) and [Karim Marucchi](https://marucchi.com/introducing-the-fair-package-manager-for-wordpress/). Shortly after, they gave a brief keynote about the FAIR Project at the Linux Foundation’s [Open Source Summit North America](https://events.linuxfoundation.org/archive/2025/open-source-summit-north-america/).
-
-    
 
 ## Extend.
 
@@ -73,8 +67,6 @@ Several FAIR developers and advocates made podcast appearances and gave intervie
 In November 2025, FAIR partnered with [Patchstack](https://patchstack.com/) in a one-day “hackathon”, delivering proofs-of-concept for bringing software vulnerability information directly to WordPress administrators’ dashboards. To do this, a **Labeller** was developed to apply specific labels to packages using Patchstack’s API for CVE (Common Vulnerabilities and Exposures) reporting. When integrated, searches for packages in the FAIR network can proactively label vulnerable packages. Next, a **Policy Engine** was developed which can enforce a security policy to prevent installing packages with known critical vulnerabilities. This work will soon converge with FAIR Forge to implement FAIR’s [Moderation (Labelling) Specification](https://github.com/fairpm/fair-protocol/tree/main/docs/moderation) and apply a robust new **Trust Model**.
 
 The event was an unqualified success. In addition to [CloudFest’s own report](https://www.cloudfest.com/blog/building-a-safer-open-web-with-fair-and-patchstack), it was reported on [by *WP-Content.co*](https://wp-content.co/fair-software-security-assistant-cloudfest-usa-2025/) and [by *The Repository*](https://www.therepository.email/fair-and-patchstack-build-security-mvp-at-cloudfest-usa-hackathon). CloudFest media partners were on hand as well, with Mark Szymanski [recording an interview](https://www.therepository.email/fair-and-patchstack-build-security-mvp-at-cloudfest-usa-hackathon) with hackathon project leads Elliot Taylor (Patchstack), Carrie Dils (FAIR TSC Co-Chair), and Brent Toderash (FAIR TSC).
-
-    
 
 ## Envision.
 

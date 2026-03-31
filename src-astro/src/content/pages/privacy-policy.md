@@ -1,7 +1,7 @@
 ---
 title: "Privacy Policy"
 description: "Who we are Suggested text: Our website address is: http://127.0.0.1:34717. Comments Suggested text: When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection. An anonymized string created from your email address (also called a […]"
-updatedDate: "2026-03-11T16:00:59"
+updatedDate: "2026-03-31T08:48:39"
 menuOrder: 0
 draft: true
 ---
@@ -26,7 +26,7 @@ An anonymized string created from your email address (also called a hash) may be
 
 If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.
 
-When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select "Remember Me", your login will persist for two weeks. If you log out of your account, the login cookies will be removed.
+When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select “Remember Me”, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.
 
 If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.
 

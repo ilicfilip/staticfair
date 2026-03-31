@@ -18,8 +18,6 @@ The WordPress ecosystem stands at a critical juncture. With over 40% of the web 
 
 Enter the [FAIR Project](https://fair.pm/): Federated And Independent Repositories. Announced during [WordCamp Europe 2025](https://europe.wordcamp.org/2025/) at [AltCtrlOrg](https://altctrl.org/) in June, FAIR represents a comprehensive effort to reimagine how WordPress—and indeed any CMS—handles software distribution, updates, and ecosystem management. At [LoopConf 2025](https://www.loopconf.com/), [Ryan McCue](https://rmccue.io/), VP of Product at [Human Made](https://humanmade.com/) and co-chair of [FAIR’s technical steering committee](https://github.com/fairpm/tsc), delivered an in-depth presentation explaining not just what FAIR is, but why it matters and how it works.
 
-    
-
 ## Who is one of the leaders of FAIR.pm?
 
 Before diving into FAIR, it’s worth understanding who’s leading this initiative. [Ryan McCue](https://profiles.wordpress.org/rmccue/) brings over 21 years of experience to the WordPress community—more than two-thirds of his life. His contributions to WordPress are substantial:
