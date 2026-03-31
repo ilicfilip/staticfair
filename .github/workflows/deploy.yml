@@ -4,36 +4,59 @@ on:
   push:
     branches: [main]
 
-concurrency:
-  group: deploy
-  cancel-in-progress: false
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
-          cache: 'npm'
-          cache-dependency-path: 'src-astro/package-lock.json'
+          node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
-        working-directory: src-astro
+      - run: npm install
+      - run: npm run build
 
-      - name: Build site
-        run: npm run build
-        working-directory: src-astro
+      - name: Create CF Pages project if needed
+        run: |
+          curl -s -X POST "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"${{ github.event.repository.name }}","production_branch":"main"}' \
+            || true
 
       - name: Deploy to Cloudflare Pages
+        id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=fair-pm
-          workingDirectory: src-astro
+          command: pages deploy dist --project-name=${{ github.event.repository.name }}
+
+      - name: Save site URL as deployment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+        run: |
+          # Extract production URL from per-commit URL (e.g. abc123.my-site.pages.dev -> my-site.pages.dev)
+          SITE_URL=$(echo "$DEPLOY_URL" | sed 's|https://[a-f0-9]*\.||')
+          if [ -z "$SITE_URL" ]; then exit 0; fi
+          SITE_URL="https://$SITE_URL"
+          echo "Site URL: $SITE_URL"
+
+          DEPLOY_ID=$(curl -sf -X POST "https://api.github.com/repos/${{ github.repository }}/deployments" \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -d '{"ref":"main","environment":"production","auto_merge":false,"required_contexts":[]}' \
+            | jq -r '.id')
+          echo "Deploy ID: $DEPLOY_ID"
+          if [ -n "$DEPLOY_ID" ] && [ "$DEPLOY_ID" != "null" ]; then
+            curl -sf -X POST "https://api.github.com/repos/${{ github.repository }}/deployments/$DEPLOY_ID/statuses" \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              -d '{"state":"success","environment_url":"'"$SITE_URL"'","environment":"production"}'
+            echo "Deployment status created"
+          fi
