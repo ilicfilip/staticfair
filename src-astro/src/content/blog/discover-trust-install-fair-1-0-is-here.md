@@ -1,15 +1,19 @@
 ---
 title: "Discover, trust, install: FAIR 1.0 is here"
 description: "Decentralised WordPress packages are here. FAIR's 1.0 Milestone Release lets site administrators find, trust, and install packages from independent sources."
-pubDate: 2025-09-24
-author: "Courtney Robertson"
+pubDate: "2025-09-24T00:00:00"
+author: "admin"
+categories:
+  - "Uncategorized"
 tags:
   - "Release Notes"
+draft: false
 ---
 
-**Decentralised WordPress packages are here**. The working group for Federated And Independent Repositories (FAIR) is excited to announce its **1.0 Milestone Release**. This milestone includes updates to several of the software projects that FAIR maintains, enabling WordPress site administrators to **find**, **trust**, and **install** packages from **independent sources** or from a mirror of the official WordPress repository. With this milestone, FAIR invites any WordPress site owner or maintainer to install FAIR's technical independence plugin to access this combined set of packages.
+**Decentralised WordPress packages are here**. The working group for Federated And Independent Repositories (FAIR) is excited to announce its **1.0 Milestone Release**. This milestone includes updates to several of the software projects that FAIR maintains, enabling WordPress site administrators to **find**, **trust**, and **install** packages from **independent sources** or from a mirror of the official WordPress repository. With this milestone, FAIR invites any WordPress site owner or maintainer to install FAIR’s technical independence plugin to access this combined set of packages.
 
-![The left sidebar shows the usual admin menu. The main area includes "At a Glance," "Activity," and "Quick Draft." In the bottom-right footer, a line notes "Version 6.8.2 — Updates served from the FAIR Package Manager and AspirePress," drawing attention to FAIR as the update source.](../../assets/images/blog/dashboard-planet.png)
+![](../../assets/images/blog/dashboard-planet.png)
+
 *Lower right corner displays updates source.*
 
 ## Overview
@@ -22,7 +26,7 @@ Results are powered by **AspireCloud**, which combines WordPress.org plugins wit
 
 ## New in this release
 
-As this release combines progress across many different parts of the FAIR project, we'll include the main changes for each of its projects.
+As this release combines progress across many different parts of the FAIR project, we’ll include the main changes for each of its projects.
 
 ## AspireCloud
 
@@ -32,26 +36,28 @@ AspireCloud aggregates metadata for packages from multiple sources and presents 
 
 AspireExplorer is a WordPress plugin that provides a public web interface for browsing and downloading packages. The plugin now also powers the listings at [fair.pm/packages/](https://fair.pm/packages/), where you can browse or search the AspireCloud index. The FAIR Plugin itself can be [downloaded from this listing](https://fair.pm/packages/plugins/fair-plugin/). These listings include a badge indicating packages that come from FAIR sources instead of WordPress.org.
 
-![Aspire Explorer plugin catalog showing the "FAIR – Federated and Independent Repositories" card with a FAIR badge and Download button, beside "ELEX WooCommerce USPS Shipping Method."](../../assets/images/blog/combined-package-list-gu.png)
+![](../../assets/images/blog/combined-package-list-gu.png)
 
 ## FAIR 1.0 plugin
 
 The FAIR plugin enables your site to install and update plugins and themes from the FAIR network while minimizing data sharing to support GDPR and other privacy regulations.
 
-- **Manages plugin & theme installation and updates**
-  - Installs & updates both WordPress.org and FAIR-registered software
-  - Performs [ED25519 signature verification](https://en.wikipedia.org/wiki/EdDSA) on FAIR software packages for security
-- **Increases privacy for regional requirements** (EU and elsewhere)
-  - Limits contact to third-party servers
-  - Does not store or report personally identifiable information
-- **Increases Performance**
-  - Uses local metadata when possible
-  - Performs many functions internally rather than via third-party services
-  - Avoids pings to unpublished content
+- Manages plugin & theme installation and updates
 
-In short, the FAIR plugin supports decentralized, verifiable sources, allowing site owners to maintain control over where data is sent and how plugins are installed. These updates help ensure that plugin discovery, installation, and updates work smoothly and securely across both official and independent sources just as easily as you've always done from your WordPress dashboard.
+– Installs & updates both WordPress.org and FAIR-registered software   – Performs [ED25519 signature verification](https://en.wikipedia.org/wiki/EdDSA) on FAIR software packages for security
 
-![WordPress Settings → Discussion screen with Avatars options; Avatar Source is set to "FAIR Avatars." Footer notes: "Updates served from the FAIR Package Manager and AspirePress."](../../assets/images/blog/avatar-settings.png)
+- Increases privacy for regional requirements (EU and elsewhere)
+
+– Limits contact to third-party servers   – Does not store or report personally identifiable information
+
+- Increases Performance
+
+– Uses local metadata when possible   – Performs many functions internally rather than via third-party services   – Avoids pings to unpublished content
+
+In short, the FAIR plugin supports decentralized, verifiable sources, allowing site owners to maintain control over where data is sent and how plugins are installed. These updates help ensure that plugin discovery, installation, and updates work smoothly and securely across both official and independent sources just as easily as you’ve always done from your WordPress dashboard.
+
+![](../../assets/images/blog/avatar-settings.png)
+
 *Avatar Source selection can be toggled at Settings > Discussion > Avatars*
 
 ## Mini-FAIR Repo plugin
@@ -60,15 +66,15 @@ FAIR has created a WordPress plugin that turns your site into a FAIR-ready conne
 
 ## Planet FAIR
 
-Planet FAIR is the component that serves the news in the FAIR ecosystem. It is a curated feed shown in the WordPress admin dashboard and also lists upcoming events in the WordPress ecosystem. This release addresses RSS publishing issues and enhances source curation. Guidelines for inclusion are available in the Planet repository: [FAIR's Planet repository](https://github.com/fairpm/planet/blob/main/guidelines.md).
+Planet FAIR is the component that serves the news in the FAIR ecosystem. It is a curated feed shown in the WordPress admin dashboard and also lists upcoming events in the WordPress ecosystem. This release addresses RSS publishing issues and enhances source curation. Guidelines for inclusion are available in the Planet repository: [FAIR’s Planet repository](https://github.com/fairpm/planet/blob/main/guidelines.md).
 
-![Zoomed screenshot of Planet FAIR showing a feed of recent WordPress community posts with titles, source names, and dates.](../../assets/images/blog/planet-zoomed.png)
+![](../../assets/images/blog/planet-zoomed.png)
 
 ## Why FAIR 1.0 matters
 
 FAIR 1.0 is the first time the full stack works together. For users, this means you can now discover and install plugins from outside the WordPress.org ecosystem without needing to modify your workflow. For developers and publishers, it offers a real, working path to distribute trusted software independently, using open standards and shared infrastructure.
 
-![WordPress plugin details modal for Git Updater; right sidebar shows "Plugin available via FAIR repository (fair.git-updater.com)" with an Activate button.](../../assets/images/blog/plugin-details-install.png)
+![](../../assets/images/blog/plugin-details-install.png)
 
 This release brings together everything FAIR stands for. It gives site owners more control over where their software comes from. It allows plugin authors to publish without relying on centralized platforms. And it provides the entire ecosystem with a model that makes decentralization feel familiar, secure, and easy to use.
 
@@ -88,10 +94,10 @@ Andrew Norcross, Andy Fragen, Anonymous, Austin, Benjamin Sternthal, Brent Toder
 
 Ready to explore FAIR?
 
-- **Install the FAIR Plugin** to search for verified plugins from both official and independent sources.
-- **Browse packages** at [fair.pm/packages](https://fair.pm/packages)
-- **Publish your own plugin** using [Mini-FAIR](https://github.com/fairpm/mini-fair-repo)
-- **Find us on GitHub** as [FAIR PM](https://github.com/fairpm/)
-- **Join the conversation** by [getting involved](https://fair.pm/get-involved/) in our [Slack](https://chat.fair.pm/) or [GitHub Discussions](https://github.com/orgs/fairpm/discussions)
+- Install the FAIR Plugin to search for verified plugins from both official and independent sources.
+- Browse packages at fair.pm/packages
+- Publish your own plugin using Mini-FAIR
+- Find us on GitHub as FAIR PM
+- Join the conversation by getting involved in our Slack or GitHub Discussions
 
-If you're a developer, publisher, or simply curious, we'd love to hear your thoughts.
+If you’re a developer, publisher, or simply curious, we’d love to hear your thoughts.
