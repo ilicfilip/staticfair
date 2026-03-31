@@ -1,8 +1,8 @@
 ---
-title: "Test - Second star to the right and straight on till morning…"
+title: "Another test - Second star to the right and straight on till morning…"
 description: "FAIR responds to Joost de Valk and Karim Marucchi stepping away. The work continues under the Linux Foundation with growing cross-ecosystem adoption."
 pubDate: "2026-02-26T00:00:00"
-updatedDate: "2026-03-31T08:40:30"
+updatedDate: "2026-03-31T08:43:03"
 author: "admin"
 categories:
   - "Uncategorized"
